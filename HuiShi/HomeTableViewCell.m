@@ -8,6 +8,7 @@
 
 #import "HomeTableViewCell.h"
 #import "HomeMenuItem.h"
+#import "UIColor+Extend.h"
 
 @implementation HomeTableViewCell
 
@@ -28,21 +29,24 @@
         HomeMenuItem *item = (HomeMenuItem *)data;
         // 界面填充
         self.TitleLable.text = item.name;
-        self.FirstImageView.image = [UIImage imageNamed:item.image];
         if (item.canExpand) {
             self.SecondImageView.hidden = NO;
             if (item.isExpand) {// 减号
 //                self.SecondImageView.image = 
             } else {// 加号
-                //                self.SecondImageView.image =
+//                self.SecondImageView.image =
             }
         } else {
             self.SecondImageView.hidden = YES;
         }
         if (item.highlight || item.isSelected) {
             self.ThirdImageView.hidden = NO;
+            self.TitleLable.textColor = [UIColor colorWithHex:0x006DDF];
+            self.FirstImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_highlight", item.image]];
         } else {
             self.ThirdImageView.hidden = YES;
+            self.TitleLable.textColor = [UIColor blackColor];
+            self.FirstImageView.image = [UIImage imageNamed:item.image];
         }
     }
 }
@@ -59,6 +63,11 @@
         HomeMenuItem *item = (HomeMenuItem *)data;
         // 界面填充
         self.TitleLable.text = item.name;
+        if (item.highlight || item.isSelected) {
+            self.TitleLable.textColor = [UIColor colorWithHex:0x006DDF];
+        } else {
+            self.TitleLable.textColor = [UIColor blackColor];
+        }
     }
 }
 

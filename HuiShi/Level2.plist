@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>image</key>
-			<string>paiming.png</string>
+			<string>paiming</string>
 			<key>name</key>
 			<string>我的排名</string>
 			<key>canexpand</key>
@@ -20,7 +20,7 @@
 		</dict>
 		<dict>
 			<key>image</key>
-			<string>tongzhi.png</string>
+			<string>tongzhi</string>
 			<key>name</key>
 			<string>我的通知</string>
 			<key>canexpand</key>
@@ -36,7 +36,7 @@
 		</dict>
 		<dict>
 			<key>image</key>
-			<string>shezhi.png</string>
+			<string>shezhi</string>
 			<key>name</key>
 			<string>选项设置</string>
 			<key>canexpand</key>

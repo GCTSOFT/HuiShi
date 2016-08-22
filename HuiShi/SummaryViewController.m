@@ -12,7 +12,6 @@
 @interface SummaryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIButton *viewHistory;
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *listArray;
 
 @end
@@ -23,8 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.listArray = [@[@"10",@"5",@"8",@"6",@"4",@"1",@"8"] copy];
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {

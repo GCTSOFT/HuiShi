@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8411F6301D6B4F8800F0255B /* UIColor+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411F62F1D6B4F8800F0255B /* UIColor+Extend.m */; };
 		8415884E1D6A124B004661D7 /* Level2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8415884C1D6A124B004661D7 /* Level2.plist */; };
 		8415884F1D6A124B004661D7 /* Level3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8415884D1D6A124B004661D7 /* Level3.plist */; };
 		8423D4D01D36856800194E2A /* HSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8423D4CF1D36856800194E2A /* HSLoginViewController.m */; };
@@ -64,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8411F62E1D6B4F8800F0255B /* UIColor+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extend.h"; sourceTree = "<group>"; };
+		8411F62F1D6B4F8800F0255B /* UIColor+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extend.m"; sourceTree = "<group>"; };
 		8415884C1D6A124B004661D7 /* Level2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level2.plist; sourceTree = "<group>"; };
 		8415884D1D6A124B004661D7 /* Level3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level3.plist; sourceTree = "<group>"; };
 		8423D4CE1D36856800194E2A /* HSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginViewController.h; sourceTree = "<group>"; };
@@ -163,6 +166,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8411F62D1D6B4F3900F0255B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8411F62E1D6B4F8800F0255B /* UIColor+Extend.h */,
+				8411F62F1D6B4F8800F0255B /* UIColor+Extend.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		8435BFB21D44A64F00325CDD /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +252,7 @@
 			children = (
 				84901B6C1D33E85500DA0E63 /* AppDelegate.h */,
 				84901B6D1D33E85500DA0E63 /* AppDelegate.m */,
+				8411F62D1D6B4F3900F0255B /* Util */,
 				849DA4561D60742D0019E469 /* BasicAuth */,
 				84835B8D1D55AE2B0014B98C /* SSKeyChain */,
 				84835B861D558DAF0014B98C /* Config */,
@@ -473,6 +486,7 @@
 				8458F30F1D3E61C5001BAD1E /* SettingViewController.m in Sources */,
 				8435BFB11D44998B00325CDD /* TabBarViewController.m in Sources */,
 				84835B8B1D55A89D0014B98C /* AppUserContext.m in Sources */,
+				8411F6301D6B4F8800F0255B /* UIColor+Extend.m in Sources */,
 				8458F3091D3E61AD001BAD1E /* SortViewController.m in Sources */,
 				84901B6B1D33E85500DA0E63 /* main.m in Sources */,
 				8458F3061D3E6197001BAD1E /* SummaryViewController.m in Sources */,

@@ -85,5 +85,17 @@
         } isauto:self.isAuto];
     }
 }
+/*
+NSString *sss = [NSString stringWithFormat:@"%@:111111", AppUContext.token];
+NSURL *ru = [NSURL URLWithString:@"http://wyeth.api.hih6.com/score/view"];
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
+request.HTTPMethod = @"POST";
+[request setValue:[NSString stringWithFormat:@"Basic %@",[sss base64EncodedString]] forHTTPHeaderField:@"Authorization"];
+NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", s);
+}];
+[task resume];
+*/
 
 @end
