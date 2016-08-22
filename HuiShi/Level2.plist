@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New item</key>
+	<array>
+		<dict>
+			<key>image</key>
+			<string>paiming.png</string>
+			<key>name</key>
+			<string>我的排名</string>
+			<key>canexpand</key>
+			<false/>
+			<key>isexpand</key>
+			<false/>
+			<key>isselected</key>
+			<false/>
+			<key>showtype</key>
+			<string>1</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>tongzhi.png</string>
+			<key>name</key>
+			<string>我的通知</string>
+			<key>canexpand</key>
+			<false/>
+			<key>isexpand</key>
+			<false/>
+			<key>isselected</key>
+			<false/>
+			<key>showtype</key>
+			<string>1</string>
+			<key>subitem</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>shezhi.png</string>
+			<key>name</key>
+			<string>选项设置</string>
+			<key>canexpand</key>
+			<false/>
+			<key>isexpand</key>
+			<false/>
+			<key>isselected</key>
+			<false/>
+			<key>showtype</key>
+			<string>1</string>
+			<key>subitem</key>
+			<array/>
+		</dict>
+	</array>
+</dict>
+</plist>

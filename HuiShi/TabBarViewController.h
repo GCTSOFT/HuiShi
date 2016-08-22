@@ -1,0 +1,13 @@
+//
+//  TabBarViewController.h
+//  HuiShi
+//
+//  Created by admin on 16/7/24.
+//  Copyright © 2016年 DiZiCompanyLimited. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface TabBarViewController : UITabBarController
+
+@end
