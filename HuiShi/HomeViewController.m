@@ -14,6 +14,8 @@
 #import "Base64.h"
 
 #import "HomeTableViewCell.h"
+#import "SummaryCollectionViewCell.h"
+#import "DatePopView.h"
 
 #define Cell_Gailan 0      // 概览
 #define Cell_MinePaiming 1 // 我的排名
@@ -56,6 +58,11 @@
 //    }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -72,7 +79,7 @@
         HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
         [cell setData:item];
         return cell;
-    } else if (item.showType == 2) {
+    } else {//if (item.showType == 2) {
         HomeSubTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeSubTableViewCell"];
         [cell setData:item];
         return cell;

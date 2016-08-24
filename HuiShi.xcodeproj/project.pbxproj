@@ -21,6 +21,13 @@
 		845BC08F1D649D4200091C1B /* HomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC08E1D649D4200091C1B /* HomeMenuItem.m */; };
 		845BC0911D64A3C900091C1B /* Level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845BC0901D64A3C900091C1B /* Level1.plist */; };
 		84650F951D4F84FF00A098F6 /* SummaryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84650F941D4F84FF00A098F6 /* SummaryCollectionViewCell.m */; };
+		8473C2641D6DEF270099892F /* CLFooterCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2581D6DEF270099892F /* CLFooterCircleView.m */; };
+		8473C2651D6DEF270099892F /* CLHeaderCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C25A1D6DEF270099892F /* CLHeaderCircleView.m */; };
+		8473C2661D6DEF270099892F /* RefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C25D1D6DEF270099892F /* RefreshBaseView.m */; };
+		8473C2671D6DEF270099892F /* RefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C25F1D6DEF270099892F /* RefreshFooterView.m */; };
+		8473C2681D6DEF270099892F /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2611D6DEF270099892F /* RefreshHeaderView.m */; };
+		8473C2691D6DEF270099892F /* UIScrollView+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2631D6DEF270099892F /* UIScrollView+Refresh.m */; };
+		8473C26C1D6DF09F0099892F /* DatePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C26B1D6DF09F0099892F /* DatePopView.m */; };
 		84835B711D5588FA0014B98C /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B6F1D5588FA0014B98C /* jpush-ios-2.1.8.a */; };
 		84835B731D5589220014B98C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B721D5589220014B98C /* CFNetwork.framework */; };
 		84835B751D55892C0014B98C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B741D55892C0014B98C /* CoreFoundation.framework */; };
@@ -91,6 +98,21 @@
 		845BC0901D64A3C900091C1B /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level1.plist; sourceTree = "<group>"; };
 		84650F931D4F84FF00A098F6 /* SummaryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCollectionViewCell.h; sourceTree = "<group>"; };
 		84650F941D4F84FF00A098F6 /* SummaryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryCollectionViewCell.m; sourceTree = "<group>"; };
+		8473C2571D6DEF270099892F /* CLFooterCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLFooterCircleView.h; path = CLRefresh/CLFooterCircleView.h; sourceTree = "<group>"; };
+		8473C2581D6DEF270099892F /* CLFooterCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLFooterCircleView.m; path = CLRefresh/CLFooterCircleView.m; sourceTree = "<group>"; };
+		8473C2591D6DEF270099892F /* CLHeaderCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLHeaderCircleView.h; path = CLRefresh/CLHeaderCircleView.h; sourceTree = "<group>"; };
+		8473C25A1D6DEF270099892F /* CLHeaderCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLHeaderCircleView.m; path = CLRefresh/CLHeaderCircleView.m; sourceTree = "<group>"; };
+		8473C25B1D6DEF270099892F /* CLRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLRefresh.h; path = CLRefresh/CLRefresh.h; sourceTree = "<group>"; };
+		8473C25C1D6DEF270099892F /* RefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RefreshBaseView.h; path = CLRefresh/RefreshBaseView.h; sourceTree = "<group>"; };
+		8473C25D1D6DEF270099892F /* RefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RefreshBaseView.m; path = CLRefresh/RefreshBaseView.m; sourceTree = "<group>"; };
+		8473C25E1D6DEF270099892F /* RefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RefreshFooterView.h; path = CLRefresh/RefreshFooterView.h; sourceTree = "<group>"; };
+		8473C25F1D6DEF270099892F /* RefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RefreshFooterView.m; path = CLRefresh/RefreshFooterView.m; sourceTree = "<group>"; };
+		8473C2601D6DEF270099892F /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RefreshHeaderView.h; path = CLRefresh/RefreshHeaderView.h; sourceTree = "<group>"; };
+		8473C2611D6DEF270099892F /* RefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RefreshHeaderView.m; path = CLRefresh/RefreshHeaderView.m; sourceTree = "<group>"; };
+		8473C2621D6DEF270099892F /* UIScrollView+Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+Refresh.h"; path = "CLRefresh/UIScrollView+Refresh.h"; sourceTree = "<group>"; };
+		8473C2631D6DEF270099892F /* UIScrollView+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+Refresh.m"; path = "CLRefresh/UIScrollView+Refresh.m"; sourceTree = "<group>"; };
+		8473C26A1D6DF09F0099892F /* DatePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePopView.h; sourceTree = "<group>"; };
+		8473C26B1D6DF09F0099892F /* DatePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePopView.m; sourceTree = "<group>"; };
 		84835B6F1D5588FA0014B98C /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jpush-ios-2.1.8.a"; path = "lib/jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
 		84835B701D5588FA0014B98C /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPUSHService.h; path = lib/JPUSHService.h; sourceTree = "<group>"; };
 		84835B721D5589220014B98C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -188,6 +210,26 @@
 			name = Module;
 			sourceTree = "<group>";
 		};
+		8473C2561D6DEF140099892F /* CLRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				8473C2571D6DEF270099892F /* CLFooterCircleView.h */,
+				8473C2581D6DEF270099892F /* CLFooterCircleView.m */,
+				8473C2591D6DEF270099892F /* CLHeaderCircleView.h */,
+				8473C25A1D6DEF270099892F /* CLHeaderCircleView.m */,
+				8473C25B1D6DEF270099892F /* CLRefresh.h */,
+				8473C25C1D6DEF270099892F /* RefreshBaseView.h */,
+				8473C25D1D6DEF270099892F /* RefreshBaseView.m */,
+				8473C25E1D6DEF270099892F /* RefreshFooterView.h */,
+				8473C25F1D6DEF270099892F /* RefreshFooterView.m */,
+				8473C2601D6DEF270099892F /* RefreshHeaderView.h */,
+				8473C2611D6DEF270099892F /* RefreshHeaderView.m */,
+				8473C2621D6DEF270099892F /* UIScrollView+Refresh.h */,
+				8473C2631D6DEF270099892F /* UIScrollView+Refresh.m */,
+			);
+			name = CLRefresh;
+			sourceTree = "<group>";
+		};
 		84835B6C1D5588D30014B98C /* JPush */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,10 +242,10 @@
 		84835B861D558DAF0014B98C /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				845BC0901D64A3C900091C1B /* Level1.plist */,
 				8415884C1D6A124B004661D7 /* Level2.plist */,
 				8415884D1D6A124B004661D7 /* Level3.plist */,
 				84835B871D558DD10014B98C /* PushConfig.plist */,
-				845BC0901D64A3C900091C1B /* Level1.plist */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -252,6 +294,7 @@
 			children = (
 				84901B6C1D33E85500DA0E63 /* AppDelegate.h */,
 				84901B6D1D33E85500DA0E63 /* AppDelegate.m */,
+				8473C2561D6DEF140099892F /* CLRefresh */,
 				8411F62D1D6B4F3900F0255B /* Util */,
 				849DA4561D60742D0019E469 /* BasicAuth */,
 				84835B8D1D55AE2B0014B98C /* SSKeyChain */,
@@ -312,6 +355,8 @@
 				84D4C8F21D3E846F002964A4 /* HomeTableViewCell.m */,
 				84650F931D4F84FF00A098F6 /* SummaryCollectionViewCell.h */,
 				84650F941D4F84FF00A098F6 /* SummaryCollectionViewCell.m */,
+				8473C26A1D6DF09F0099892F /* DatePopView.h */,
+				8473C26B1D6DF09F0099892F /* DatePopView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -474,11 +519,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				84901B711D33E85500DA0E63 /* ViewController.m in Sources */,
+				8473C2681D6DEF270099892F /* RefreshHeaderView.m in Sources */,
 				8458F30C1D3E61B9001BAD1E /* MissonViewController.m in Sources */,
 				84D4C8F31D3E846F002964A4 /* HomeTableViewCell.m in Sources */,
+				8473C2661D6DEF270099892F /* RefreshBaseView.m in Sources */,
 				8423D4D01D36856800194E2A /* HSLoginViewController.m in Sources */,
 				84650F951D4F84FF00A098F6 /* SummaryCollectionViewCell.m in Sources */,
+				8473C26C1D6DF09F0099892F /* DatePopView.m in Sources */,
 				84901B6E1D33E85500DA0E63 /* AppDelegate.m in Sources */,
+				8473C2671D6DEF270099892F /* RefreshFooterView.m in Sources */,
 				8435BFB51D44A66600325CDD /* AppContext.m in Sources */,
 				845BC08F1D649D4200091C1B /* HomeMenuItem.m in Sources */,
 				8458F3031D3E612C001BAD1E /* HomeViewController.m in Sources */,
@@ -489,7 +538,10 @@
 				8411F6301D6B4F8800F0255B /* UIColor+Extend.m in Sources */,
 				8458F3091D3E61AD001BAD1E /* SortViewController.m in Sources */,
 				84901B6B1D33E85500DA0E63 /* main.m in Sources */,
+				8473C2691D6DEF270099892F /* UIScrollView+Refresh.m in Sources */,
+				8473C2651D6DEF270099892F /* CLHeaderCircleView.m in Sources */,
 				8458F3061D3E6197001BAD1E /* SummaryViewController.m in Sources */,
+				8473C2641D6DEF270099892F /* CLFooterCircleView.m in Sources */,
 				84835B991D55AE690014B98C /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

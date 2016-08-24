@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+// 我的积分
 @interface SummaryViewController : UIViewController
 
 @end
