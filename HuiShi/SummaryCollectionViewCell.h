@@ -9,6 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @class SummarySubItemView;
+@class SummarySubCell;
+
+@protocol SummarySubViewDelegate <NSObject>
+
+- (void)summaryButtonClick:(SummarySubItemView *)view;
+
+@end
+
+@protocol SummaryViewDelegate <NSObject>
+
+- (void)summaryView:(SummarySubCell *)view selectedAtIndex:(int)index;
+
+@end
+
 
 @interface SummaryCollectionViewCell : UICollectionViewCell
 
@@ -26,13 +40,17 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIView *bgView;
 
+
+
 @end
 
-@interface SummarySubCell : UITableViewCell
+@interface SummarySubCell : UITableViewCell<SummarySubViewDelegate>
 
 @property (strong, nonatomic) SummarySubItemView *firstView;
 @property (strong, nonatomic) SummarySubItemView *secondView;
 @property (strong, nonatomic) SummarySubItemView *thirdView;
+
+@property (nonatomic, assign) id<SummaryViewDelegate>delegate;
 
 - (void)setdata:(id)data;
 
@@ -43,6 +61,8 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *fenLabel;
 @property (strong, nonatomic) UILabel *paimingLabel;
+
+@property (nonatomic, assign) id<SummarySubViewDelegate>delegate;
 
 - (void)setData:(id)data;
 

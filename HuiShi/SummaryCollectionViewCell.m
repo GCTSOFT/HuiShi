@@ -36,6 +36,12 @@
     self.firstView = [[SummarySubItemView alloc] init];
     self.secondView = [[SummarySubItemView alloc] init];
     self.thirdView = [[SummarySubItemView alloc] init];
+    self.firstView.tag = 0;
+    self.secondView.tag = 1;
+    self.thirdView.tag = 2;
+    self.firstView.delegate = self;
+    self.secondView.delegate = self;
+    self.thirdView.delegate = self;
     [self.contentView addSubview:self.firstView];
     [self.contentView addSubview:self.thirdView];
     [self.contentView addSubview:self.secondView];
@@ -52,6 +58,13 @@
 - (void)setdata:(id)data
 {
     
+}
+
+- (void)summaryButtonClick:(SummarySubItemView *)view
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(summaryView:selectedAtIndex:)]) {
+        [self.delegate summaryView:self selectedAtIndex:view.tag];
+    }
 }
 
 @end
@@ -83,7 +96,9 @@
 
 - (void)buttonClick:(UIButton *)button
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(summaryButtonClick:)]) {
+        [self.delegate summaryButtonClick:self];
+    }
 }
 
 - (void)initialView

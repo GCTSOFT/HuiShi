@@ -20,6 +20,8 @@
 		8458F30F1D3E61C5001BAD1E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458F30E1D3E61C5001BAD1E /* SettingViewController.m */; };
 		845BC08F1D649D4200091C1B /* HomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC08E1D649D4200091C1B /* HomeMenuItem.m */; };
 		845BC0911D64A3C900091C1B /* Level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845BC0901D64A3C900091C1B /* Level1.plist */; };
+		8461A2341D6F1B5100F1340E /* PopBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461A2331D6F1B5100F1340E /* PopBackView.m */; };
+		8461A23B1D6F48B300F1340E /* SubManagerPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461A23A1D6F48B300F1340E /* SubManagerPopView.m */; };
 		84650F951D4F84FF00A098F6 /* SummaryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84650F941D4F84FF00A098F6 /* SummaryCollectionViewCell.m */; };
 		8473C2641D6DEF270099892F /* CLFooterCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2581D6DEF270099892F /* CLFooterCircleView.m */; };
 		8473C2651D6DEF270099892F /* CLHeaderCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C25A1D6DEF270099892F /* CLHeaderCircleView.m */; };
@@ -96,6 +98,11 @@
 		845BC08D1D649D4200091C1B /* HomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuItem.h; sourceTree = "<group>"; };
 		845BC08E1D649D4200091C1B /* HomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMenuItem.m; sourceTree = "<group>"; };
 		845BC0901D64A3C900091C1B /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level1.plist; sourceTree = "<group>"; };
+		8461A2321D6F1B5100F1340E /* PopBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopBackView.h; sourceTree = "<group>"; };
+		8461A2331D6F1B5100F1340E /* PopBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopBackView.m; sourceTree = "<group>"; };
+		8461A2351D6F1EA700F1340E /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		8461A2391D6F48B300F1340E /* SubManagerPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubManagerPopView.h; sourceTree = "<group>"; };
+		8461A23A1D6F48B300F1340E /* SubManagerPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubManagerPopView.m; sourceTree = "<group>"; };
 		84650F931D4F84FF00A098F6 /* SummaryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCollectionViewCell.h; sourceTree = "<group>"; };
 		84650F941D4F84FF00A098F6 /* SummaryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryCollectionViewCell.m; sourceTree = "<group>"; };
 		8473C2571D6DEF270099892F /* CLFooterCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLFooterCircleView.h; path = CLRefresh/CLFooterCircleView.h; sourceTree = "<group>"; };
@@ -206,6 +213,7 @@
 				84835B8A1D55A89D0014B98C /* AppUserContext.m */,
 				845BC08D1D649D4200091C1B /* HomeMenuItem.h */,
 				845BC08E1D649D4200091C1B /* HomeMenuItem.m */,
+				8461A2351D6F1EA700F1340E /* CommonDefine.h */,
 			);
 			name = Module;
 			sourceTree = "<group>";
@@ -355,8 +363,12 @@
 				84D4C8F21D3E846F002964A4 /* HomeTableViewCell.m */,
 				84650F931D4F84FF00A098F6 /* SummaryCollectionViewCell.h */,
 				84650F941D4F84FF00A098F6 /* SummaryCollectionViewCell.m */,
+				8461A2391D6F48B300F1340E /* SubManagerPopView.h */,
+				8461A23A1D6F48B300F1340E /* SubManagerPopView.m */,
 				8473C26A1D6DF09F0099892F /* DatePopView.h */,
 				8473C26B1D6DF09F0099892F /* DatePopView.m */,
+				8461A2321D6F1B5100F1340E /* PopBackView.h */,
+				8461A2331D6F1B5100F1340E /* PopBackView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -532,6 +544,7 @@
 				845BC08F1D649D4200091C1B /* HomeMenuItem.m in Sources */,
 				8458F3031D3E612C001BAD1E /* HomeViewController.m in Sources */,
 				849DA4591D6074430019E469 /* Base64.m in Sources */,
+				8461A23B1D6F48B300F1340E /* SubManagerPopView.m in Sources */,
 				8458F30F1D3E61C5001BAD1E /* SettingViewController.m in Sources */,
 				8435BFB11D44998B00325CDD /* TabBarViewController.m in Sources */,
 				84835B8B1D55A89D0014B98C /* AppUserContext.m in Sources */,
@@ -543,6 +556,7 @@
 				8458F3061D3E6197001BAD1E /* SummaryViewController.m in Sources */,
 				8473C2641D6DEF270099892F /* CLFooterCircleView.m in Sources */,
 				84835B991D55AE690014B98C /* SSKeychain.m in Sources */,
+				8461A2341D6F1B5100F1340E /* PopBackView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

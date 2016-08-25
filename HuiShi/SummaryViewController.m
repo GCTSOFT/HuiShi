@@ -10,7 +10,7 @@
 #import "SummaryCollectionViewCell.h"
 #import "CLRefresh.h"
 
-@interface SummaryViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface SummaryViewController ()<UITableViewDelegate, UITableViewDataSource, SummaryViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *viewHistory;
 @property (strong, nonatomic) NSMutableArray *listArray;
@@ -58,6 +58,7 @@
         if (cell == nil) {
             cell = [[SummarySubCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SummarySubCell"];
         }
+        cell.delegate = self;
         cell.contentView.backgroundColor = [UIColor lightGrayColor];
         return cell;
     }
@@ -77,36 +78,13 @@
     }
 }
 
+#pragma mark - SummaryViewDelegate
+- (void)summaryView:(SummarySubCell *)view selectedAtIndex:(int)index
+{
+    if (1) {//kpi考核项还有子项的时候  弹出某个controller
+        
+    }
+}
 
-
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-//{
-//    return self.listArray.count;
-//}
-//
-//// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString * CellIdentifier = @"summarycollectionviewcell";
-//    SummaryCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-////    cell.bgView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-////    cell.bgView.layer.borderWidth = 1.;
-//    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//    cell.layer.borderWidth = 1.;
-//    cell.titleLabel.text = @"综合积分";
-//    cell.scroeLabel.text = [self.listArray objectAtIndex:indexPath.row];
-//    cell.sortLabel.text = [self.listArray objectAtIndex:indexPath.row];
-//    return cell;
-//}
-//
-///*
-//#pragma mark - Navigation
-//
-//// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//}
-//*/
 
 @end

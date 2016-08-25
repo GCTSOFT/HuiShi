@@ -7,8 +7,10 @@
 //
 
 #import "DatePopView.h"
+#import "PopBackView.h"
+#import "CommonDefine.h"
 
-@interface DatePopView ()<UIPickerViewDataSource, UIPickerViewDelegate>
+@interface DatePopView ()<UIPickerViewDataSource, UIPickerViewDelegate, PopBackViewDelegate>
 
 @property (nonatomic, strong) UIPickerView *pickView;
 @property (nonatomic, strong) UIButton *cancelButton;
@@ -19,6 +21,7 @@
 @property (nonatomic, assign) int nian;
 @property (nonatomic, assign) int jidu;
 @property (nonatomic, assign) int yuefen;
+@property (nonatomic, assign) CGRect fr;
 
 @end
 
@@ -28,6 +31,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.fr = frame;
         [self initialView];
     }
     return self;
@@ -67,7 +71,7 @@
 
 - (void)cancelButtonClick:(UIButton *)button
 {
-    
+    [self dismiss];
 }
 
 - (void)completeButtonClick:(UIButton *)button
@@ -78,12 +82,34 @@
 #pragma mark - public
 - (void)show
 {
-    
+    UIWindow *wind = AppContext.appdelegate.window;
+    PopBackView *bgView = [[PopBackView alloc] initWithFrame:wind.bounds];
+    bgView.delegate = self;
+    bgView.tag = kPopBackViewTag;
+    [wind addSubview:bgView];
+    self.frame = CGRectMake(Screen_Width-self.fr.size.width, self.fr.size.height, 0, 0);
+    self.tag = 131;
+    [bgView addSubview:self];
+    [UIView animateWithDuration:.4 animations:^{
+        self.frame = self.fr;
+    }];
 }
 
 - (void)dismiss
 {
-    
+    PopBackView *bgView = [AppContext.appdelegate.window viewWithTag:kPopBackViewTag];
+    [UIView animateWithDuration:.4 animations:^{
+        self.frame = CGRectMake(Screen_Width-300, 400, 0, 0);
+    } completion:^(BOOL finished) {
+        bgView.delegate = nil;
+        [bgView removeFromSuperview];
+    }];
+}
+
+#pragma mark - PopBackViewDelegate
+- (void)touchBgView:(UIView *)backView
+{
+    [self dismiss];
 }
 
 #pragma mark - UIPickerViewDataSource, UIPickerViewDelegate
