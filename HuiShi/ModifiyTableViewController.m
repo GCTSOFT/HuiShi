@@ -29,50 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title =@"修改密码";
-    //发送请求获得旧密码数据
-    NSString *str = [NSString stringWithFormat:@"%@:111111", AppUContext.token];
-    NSURL *ru = [NSURL URLWithString:@"http://wyeth.api.hih6.com/score/view"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
-    request.HTTPMethod = @"GET";
-    [request setValue:[NSString stringWithFormat:@"Basic %@",[str base64EncodedString]] forHTTPHeaderField:@"Authorization"];
-    
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-    {
-        if (data) {
-            NSString *strData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//            NSLog(@"这是什么数据%@", strData);
-        }else
-        {
-            NSLog(@"错误%@",error.userInfo);
-        }
-        
-        }];
-    [task resume];
+   
+}
 
-    
-}
-- (void)postNewPassword
-{
-    NSString *str = [NSString stringWithFormat:@"%@:111111", AppUContext.token];
-    NSURL *ru = [NSURL URLWithString:@"http://wyeth.api.hih6.com/score/view"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
-    request.HTTPMethod = @"POST";
-    [request setValue:[NSString stringWithFormat:@"Basic %@",[str base64EncodedString]] forHTTPHeaderField:@"Authorization"];
-    
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-                                  {
-                                      if (data) {
-                                          NSString *strData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                          NSLog(@"这是什么数据%@", strData);
-                                      }else
-                                      {
-                                          NSLog(@"错误%@",error.userInfo);
-                                      }
-                                      
-                                  }];
-    [task resume];
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -122,7 +81,7 @@
         return 1;
     }else
     {
-        return 100;
+        return 135;
     }
 }
 
@@ -138,14 +97,47 @@
         footerView = [[[NSBundle mainBundle] loadNibNamed:@"FooterView" owner:nil options:nil] lastObject];
         footerView.block= ^()
         {
-            //当点击按钮的时候
-            //上传新的密码
             
+            NSData *requestData = [[NSString stringWithFormat:@"oldpassword=%@&newpassword=%@", self.oldTextField.text, self.zinTextField.text] dataUsingEncoding:NSUTF8StringEncoding];
+            
+            NSLog(@"=====%@",self.oldTextField.text);
+            NSURL *ru = [NSURL URLWithString:@"http://wyeth.admin.hih6.com/setting/resetpassword"];
+            
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
+            request.HTTPMethod = @"POST";
+            request.HTTPBody = requestData;
+            
+            NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+            {
+                if (data) {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+                                                  
+                NSString *result = [dic objectForKey:@"status"];
+                                                  
+                if ([result isEqualToString:@"success"]) {
+                                                      
+                NSLog(@"修改密码成功");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                ModifiySuccessViewController *success =[[ ModifiySuccessViewController alloc] initWithNibName:@"ModifiySuccessViewController" bundle:nil];
+                                                          
+                [self.navigationController pushViewController:success animated:YES];
+                });
+                    
+                }else {
+                    NSLog(@"修改密码失败");
+                }
+                    NSLog(@"setting %@", dic);
+            }
+    }];
+//            [task resume];
+    
             //2跳转
             ModifiySuccessViewController *success =[[ ModifiySuccessViewController alloc] initWithNibName:@"ModifiySuccessViewController" bundle:nil];
             
             [self.navigationController pushViewController:success animated:YES];
-        };
+          
+       };
     }
 
     return footerView;

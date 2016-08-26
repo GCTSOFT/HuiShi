@@ -7,7 +7,7 @@
 //
 
 #import "ModifiySuccessViewController.h"
-
+#import "HSLoginViewController.h"
 @interface ModifiySuccessViewController ()
 
 @end
@@ -18,6 +18,11 @@
     [super viewDidLoad];
     self.title = @"重置成功";
 }
+
+- (IBAction)loginAgain:(id)sender {
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

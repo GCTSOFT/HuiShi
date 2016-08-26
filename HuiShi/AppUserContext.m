@@ -80,15 +80,21 @@
 
 - (void)loginWithAccount:(NSString *)account password:(NSString *)password callback:(UserCallBack)callback isauto:(BOOL)autoL
 {
+    
     NSData *requestData = [[NSString stringWithFormat:@"username=%@&password=%@", account, password] dataUsingEncoding:NSUTF8StringEncoding];
+    
     NSURL *ru = [NSURL URLWithString:@"http://wyeth.api.hih6.com/site/login"];
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
     request.HTTPMethod = @"POST";
     request.HTTPBody = requestData;
+    
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         callback(data);
     }];
     [task resume];
+    
+    NSLog(@"发送请求成功");
 }
 
 @end

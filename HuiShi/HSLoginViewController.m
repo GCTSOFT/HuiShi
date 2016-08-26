@@ -58,32 +58,45 @@
 */
 - (IBAction)LoginButtonClick:(UIButton *)sender
 {
-    self.accountLabel.text = @"yangsl9";
-    self.passwordLabel.text = @"888888";
+//    self.accountLabel.text = @"chang.liu@wyethnutrition.com";
+//    self.passwordLabel.text = @"888888";
+    
     if (self.accountLabel.text.length > 0 && self.passwordLabel.text.length > 0) {
         if (self.isAuto == YES) {
             AppUContext.account = self.accountLabel.text;
             AppUContext.password = self.passwordLabel.text;
             AppUContext.autoLogin = YES;
         }
+        
         [AppUContext loginWithAccount:self.accountLabel.text password:self.passwordLabel.text callback:^(NSData *data) {
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-            NSString *result = [dic objectForKey:@"status"];
-            if ([result isEqualToString:@"success"]) {
-                NSString *token = [dic objectForKey:@"access-token"];
-                if (token.length > 0) {
-                    AppUContext.token = token;
-                    AppUContext.isLogin = YES;
-                }
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self dismissViewControllerAnimated:YES completion:nil];
-                });
-            } else {
+            
+            if (data) {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
                 
+                NSString *result = [dic objectForKey:@"status"];
+                
+                if ([result isEqualToString:@"success"]) {
+                    
+                    NSString *token = [dic objectForKey:@"access-token"];
+                    if (token.length > 0) {
+                        AppUContext.token = token;
+                        AppUContext.isLogin = YES;
+                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    });
+                } else {
+                    NSLog(@"登录失败");
+                }
+                NSLog(@"login %@", dic);
             }
-            NSLog(@"login %@", dic);
+
         } isauto:self.isAuto];
     }
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 /*
 NSString *sss = [NSString stringWithFormat:@"%@:111111", AppUContext.token];

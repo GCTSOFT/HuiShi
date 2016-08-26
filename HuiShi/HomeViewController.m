@@ -45,10 +45,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    if (!AppUContext.isLogin) {
+        HSLoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HSLoginViewController"];
+        [self presentViewController:vc animated:NO completion:nil];
+    }
+    
     [self _setupLeftBarButtonItem];
     [self _setupRightBarButtonItem];
     AppContext.tabController.selectedIndex = 0;
     [self loadMenuPlist];
+    
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -31,6 +31,9 @@
                     <state key="normal" title="重新登录">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loginAgain:" destination="-1" eventType="touchUpInside" id="V5n-Vl-072"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
