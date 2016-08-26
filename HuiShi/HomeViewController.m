@@ -129,6 +129,26 @@
         self.selectIndex = indexPath.row;
         [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
+    
+    NSDictionary * userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:indexPath.row],@"index", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectTabBarViewControllerIndexNotification" object:nil userInfo:userInfo];
+    
+#warning  -- ceshishezhi 测试
+    
+    if (indexPath.row == 0) {
+        NSLog(@"点击了第1行cell");
+    }else if (indexPath.row == 1){
+        NSLog(@"点击了第2行cell");
+    }else if (indexPath.row == 2){
+        NSLog(@"点击了第3行cell");
+    }else if (indexPath.row == 3){
+        NSLog(@"点击了第4行cell");
+    }else if (indexPath.row == 4){
+        NSLog(@"点击了第5行cell");
+    }else if (indexPath.row == 5){
+        NSLog(@"点击了第6行cell");
+   
+    }
 }
 
 - (void)setSelectIndex:(NSInteger)selectIndex
