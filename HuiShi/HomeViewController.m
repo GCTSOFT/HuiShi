@@ -17,6 +17,8 @@
 #import "SummaryCollectionViewCell.h"
 #import "DatePopView.h"
 
+#import "NewSettingTableViewController.h"
+
 #define Cell_Gailan 0      // 概览
 #define Cell_MinePaiming 1 // 我的排名
 #define Cell_TotalSort 2   // 综合积分排名
@@ -147,7 +149,14 @@
         NSLog(@"点击了第5行cell");
     }else if (indexPath.row == 5){
         NSLog(@"点击了第6行cell");
-   
+        NewSettingTableViewController *settingVc = [[NewSettingTableViewController alloc] initWithNibName:@"NewSettingTableViewController" bundle:nil];
+        UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:settingVc];
+        navi.preferredContentSize =CGSizeMake(300, 300);
+        navi.modalPresentationStyle = UIModalPresentationFormSheet;
+        
+        [self presentViewController:navi animated:YES completion:nil];
+        
+        
     }
 }
 

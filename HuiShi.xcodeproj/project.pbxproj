@@ -54,6 +54,17 @@
 		84901B8F1D33E85500DA0E63 /* HuiShiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84901B8E1D33E85500DA0E63 /* HuiShiUITests.m */; };
 		849DA4591D6074430019E469 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 849DA4581D6074430019E469 /* Base64.m */; };
 		84D4C8F31D3E846F002964A4 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D4C8F21D3E846F002964A4 /* HomeTableViewCell.m */; };
+		D2C94A161D6FD71E00B3EB97 /* NewSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C94A141D6FD71E00B3EB97 /* NewSettingTableViewController.m */; };
+		D2C94A171D6FD71E00B3EB97 /* NewSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C94A151D6FD71E00B3EB97 /* NewSettingTableViewController.xib */; };
+		D2C94A1B1D6FD85700B3EB97 /* ModifiyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C94A191D6FD85700B3EB97 /* ModifiyTableViewController.m */; };
+		D2C94A1C1D6FD85700B3EB97 /* ModifiyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C94A1A1D6FD85700B3EB97 /* ModifiyTableViewController.xib */; };
+		D2C94A201D6FD87F00B3EB97 /* ModifiySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C94A1E1D6FD87F00B3EB97 /* ModifiySuccessViewController.m */; };
+		D2C94A211D6FD87F00B3EB97 /* ModifiySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C94A1F1D6FD87F00B3EB97 /* ModifiySuccessViewController.xib */; };
+		D2C94A251D6FD91A00B3EB97 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C94A231D6FD91A00B3EB97 /* FooterView.xib */; };
+		D2C94A261D6FD91A00B3EB97 /* FooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C94A241D6FD91A00B3EB97 /* FooterView.m */; };
+		D2C94A281D6FD92000B3EB97 /* Writeoffs_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C94A271D6FD92000B3EB97 /* Writeoffs_btn@2x.png */; };
+		D2C94A2C1D6FD9E400B3EB97 /* GuanYuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C94A2A1D6FD9E400B3EB97 /* GuanYuViewController.m */; };
+		D2C94A2D1D6FD9E400B3EB97 /* GuanYuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C94A2B1D6FD9E400B3EB97 /* GuanYuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +168,22 @@
 		849DA4581D6074430019E469 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		84D4C8F11D3E846F002964A4 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		84D4C8F21D3E846F002964A4 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		D2C94A131D6FD71E00B3EB97 /* NewSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewSettingTableViewController.h; sourceTree = "<group>"; };
+		D2C94A141D6FD71E00B3EB97 /* NewSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewSettingTableViewController.m; sourceTree = "<group>"; };
+		D2C94A151D6FD71E00B3EB97 /* NewSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewSettingTableViewController.xib; sourceTree = "<group>"; };
+		D2C94A181D6FD85700B3EB97 /* ModifiyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifiyTableViewController.h; sourceTree = "<group>"; };
+		D2C94A191D6FD85700B3EB97 /* ModifiyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifiyTableViewController.m; sourceTree = "<group>"; };
+		D2C94A1A1D6FD85700B3EB97 /* ModifiyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifiyTableViewController.xib; sourceTree = "<group>"; };
+		D2C94A1D1D6FD87F00B3EB97 /* ModifiySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifiySuccessViewController.h; sourceTree = "<group>"; };
+		D2C94A1E1D6FD87F00B3EB97 /* ModifiySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifiySuccessViewController.m; sourceTree = "<group>"; };
+		D2C94A1F1D6FD87F00B3EB97 /* ModifiySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifiySuccessViewController.xib; sourceTree = "<group>"; };
+		D2C94A221D6FD91A00B3EB97 /* FooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterView.h; sourceTree = "<group>"; };
+		D2C94A231D6FD91A00B3EB97 /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
+		D2C94A241D6FD91A00B3EB97 /* FooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterView.m; sourceTree = "<group>"; };
+		D2C94A271D6FD92000B3EB97 /* Writeoffs_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Writeoffs_btn@2x.png"; sourceTree = "<group>"; };
+		D2C94A291D6FD9E400B3EB97 /* GuanYuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuanYuViewController.h; sourceTree = "<group>"; };
+		D2C94A2A1D6FD9E400B3EB97 /* GuanYuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuanYuViewController.m; sourceTree = "<group>"; };
+		D2C94A2B1D6FD9E400B3EB97 /* GuanYuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuanYuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +419,22 @@
 				8458F30B1D3E61B9001BAD1E /* MissonViewController.m */,
 				8458F30D1D3E61C5001BAD1E /* SettingViewController.h */,
 				8458F30E1D3E61C5001BAD1E /* SettingViewController.m */,
+				D2C94A131D6FD71E00B3EB97 /* NewSettingTableViewController.h */,
+				D2C94A141D6FD71E00B3EB97 /* NewSettingTableViewController.m */,
+				D2C94A151D6FD71E00B3EB97 /* NewSettingTableViewController.xib */,
+				D2C94A181D6FD85700B3EB97 /* ModifiyTableViewController.h */,
+				D2C94A191D6FD85700B3EB97 /* ModifiyTableViewController.m */,
+				D2C94A1A1D6FD85700B3EB97 /* ModifiyTableViewController.xib */,
+				D2C94A1D1D6FD87F00B3EB97 /* ModifiySuccessViewController.h */,
+				D2C94A1E1D6FD87F00B3EB97 /* ModifiySuccessViewController.m */,
+				D2C94A1F1D6FD87F00B3EB97 /* ModifiySuccessViewController.xib */,
+				D2C94A291D6FD9E400B3EB97 /* GuanYuViewController.h */,
+				D2C94A2A1D6FD9E400B3EB97 /* GuanYuViewController.m */,
+				D2C94A2B1D6FD9E400B3EB97 /* GuanYuViewController.xib */,
+				D2C94A221D6FD91A00B3EB97 /* FooterView.h */,
+				D2C94A231D6FD91A00B3EB97 /* FooterView.xib */,
+				D2C94A241D6FD91A00B3EB97 /* FooterView.m */,
+				D2C94A271D6FD92000B3EB97 /* Writeoffs_btn@2x.png */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -499,13 +542,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C94A1C1D6FD85700B3EB97 /* ModifiyTableViewController.xib in Resources */,
 				84835B881D558DD10014B98C /* PushConfig.plist in Resources */,
+				D2C94A251D6FD91A00B3EB97 /* FooterView.xib in Resources */,
 				845BC0911D64A3C900091C1B /* Level1.plist in Resources */,
 				8415884E1D6A124B004661D7 /* Level2.plist in Resources */,
+				D2C94A281D6FD92000B3EB97 /* Writeoffs_btn@2x.png in Resources */,
+				D2C94A171D6FD71E00B3EB97 /* NewSettingTableViewController.xib in Resources */,
 				84901B791D33E85500DA0E63 /* LaunchScreen.storyboard in Resources */,
 				84901B761D33E85500DA0E63 /* Assets.xcassets in Resources */,
 				84901B741D33E85500DA0E63 /* Main.storyboard in Resources */,
+				D2C94A211D6FD87F00B3EB97 /* ModifiySuccessViewController.xib in Resources */,
 				8415884F1D6A124B004661D7 /* Level3.plist in Resources */,
+				D2C94A2D1D6FD9E400B3EB97 /* GuanYuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,10 +588,13 @@
 				84650F951D4F84FF00A098F6 /* SummaryCollectionViewCell.m in Sources */,
 				8473C26C1D6DF09F0099892F /* DatePopView.m in Sources */,
 				84901B6E1D33E85500DA0E63 /* AppDelegate.m in Sources */,
+				D2C94A2C1D6FD9E400B3EB97 /* GuanYuViewController.m in Sources */,
+				D2C94A161D6FD71E00B3EB97 /* NewSettingTableViewController.m in Sources */,
 				8473C2671D6DEF270099892F /* RefreshFooterView.m in Sources */,
 				8435BFB51D44A66600325CDD /* AppContext.m in Sources */,
 				845BC08F1D649D4200091C1B /* HomeMenuItem.m in Sources */,
 				8458F3031D3E612C001BAD1E /* HomeViewController.m in Sources */,
+				D2C94A201D6FD87F00B3EB97 /* ModifiySuccessViewController.m in Sources */,
 				849DA4591D6074430019E469 /* Base64.m in Sources */,
 				8461A23B1D6F48B300F1340E /* SubManagerPopView.m in Sources */,
 				8458F30F1D3E61C5001BAD1E /* SettingViewController.m in Sources */,
@@ -552,9 +604,11 @@
 				8458F3091D3E61AD001BAD1E /* SortViewController.m in Sources */,
 				84901B6B1D33E85500DA0E63 /* main.m in Sources */,
 				8473C2691D6DEF270099892F /* UIScrollView+Refresh.m in Sources */,
+				D2C94A1B1D6FD85700B3EB97 /* ModifiyTableViewController.m in Sources */,
 				8473C2651D6DEF270099892F /* CLHeaderCircleView.m in Sources */,
 				8458F3061D3E6197001BAD1E /* SummaryViewController.m in Sources */,
 				8473C2641D6DEF270099892F /* CLFooterCircleView.m in Sources */,
+				D2C94A261D6FD91A00B3EB97 /* FooterView.m in Sources */,
 				84835B991D55AE690014B98C /* SSKeychain.m in Sources */,
 				8461A2341D6F1B5100F1340E /* PopBackView.m in Sources */,
 			);
