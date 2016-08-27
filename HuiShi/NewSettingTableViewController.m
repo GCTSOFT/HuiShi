@@ -17,17 +17,28 @@
 @implementation NewSettingTableViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"选项设置";
-    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc]initWithTitle:@"关闭" style:UIBarButtonItemStyleDone target:self action:@selector(clickCloseItem:)];
     
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(0, 0, 50, 50);
+    [btn setTitle:@"关闭" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor colorWithRed:252/255.0 green:121/255.0 blue:65/255.0 alpha:1] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(clickCloseItem:) forControlEvents:(UIControlEventTouchUpInside)];
+    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = closeItem;
     
 }
-- (void)clickCloseItem:(UIButton *)sender
+- (void)clickCloseItem:(id)sender
 {
     [self.navigationController dismissViewControllerAnimated:NO completion:nil];
     
+}
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.1;
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -74,6 +85,10 @@
         [self.navigationController pushViewController:modifiy animated:YES];
     }
 
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 65;
 }
 
 /*

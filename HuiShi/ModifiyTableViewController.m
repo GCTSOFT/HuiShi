@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *xinPassword;
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *surePassword;
+
 @property (weak, nonatomic) IBOutlet UITextField *oldTextField;
 @property (weak, nonatomic) IBOutlet UITextField *zinTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sureTextField;
@@ -29,10 +30,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title =@"修改密码";
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(0, 0, 40, 40);
+    
+    [backBtn setImage:[UIImage imageNamed:@"Writeoffs_btn@2x.png"] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(doBack:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backItem;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
+    
+    tapGesture.numberOfTapsRequired = 1;
+    tapGesture.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:tapGesture];
    
 }
-
-
+//轻击手势触发方法
+-(void)tapGesture:(id)sender
+{
+    [self.view endEditing:YES];
+    
+}
+-(void)doBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
   
@@ -81,7 +104,7 @@
         return 1;
     }else
     {
-        return 135;
+        return 100;
     }
 }
 
@@ -98,46 +121,64 @@
         footerView.block= ^()
         {
             
-            NSData *requestData = [[NSString stringWithFormat:@"oldpassword=%@&newpassword=%@", self.oldTextField.text, self.zinTextField.text] dataUsingEncoding:NSUTF8StringEncoding];
-            
-            NSLog(@"=====%@",self.oldTextField.text);
-            NSURL *ru = [NSURL URLWithString:@"http://wyeth.admin.hih6.com/setting/resetpassword"];
-            
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
-            request.HTTPMethod = @"POST";
-            request.HTTPBody = requestData;
-            
-            NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-            {
-                if (data) {
-                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                                  
-                NSString *result = [dic objectForKey:@"status"];
-                                                  
-                if ([result isEqualToString:@"success"]) {
+            if (![self.zinTextField.text  isEqualToString:self.sureTextField.text]) {
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:@"提示"
+                                      message:@"两次输入的密码不一致"
+                                      delegate:nil
+                                      cancelButtonTitle:@"确定"
+                                      otherButtonTitles:nil];
+                [alert show];
+            }else{
+               
+                NSData *requestData = [[NSString stringWithFormat:@"oldpassword=%@&newpassword=%@", self.oldTextField.text, self.zinTextField.text] dataUsingEncoding:NSUTF8StringEncoding];
+                
+                NSLog(@"=====%@",self.oldTextField.text);
+                NSURL *ru = [NSURL URLWithString:@"http://wyeth.api.hih6.com/setting/resetpassword"];
+                
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
+                request.HTTPMethod = @"POST";
+                request.HTTPBody = requestData;
+                
+                NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+                {
+                    if (data) {
+                        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
                                                       
-                NSLog(@"修改密码成功");
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                ModifiySuccessViewController *success =[[ ModifiySuccessViewController alloc] initWithNibName:@"ModifiySuccessViewController" bundle:nil];
+                        NSString *result = [dic objectForKey:@"status"];
+                                                      
+                        if ([result isEqualToString:@"success"]) {
                                                           
-                [self.navigationController pushViewController:success animated:YES];
-                });
-                    
-                }else {
-                    NSLog(@"修改密码失败");
-                }
-                    NSLog(@"setting %@", dic);
+                            NSLog(@"修改密码成功");
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                              
+                            ModifiySuccessViewController *success =[[ ModifiySuccessViewController alloc] initWithNibName:@"ModifiySuccessViewController" bundle:nil];
+                                                              
+                            [self.navigationController pushViewController:success animated:YES];
+                            });
+                                                          
+                            }else {
+                                NSLog(@"修改密码失败");
+                            }
+                            NSLog(@"setting %@", dic);
+                    }
+                }];
+                [task resume];
+                
+//                //2跳转
+//                ModifiySuccessViewController *success =[[ ModifiySuccessViewController alloc] initWithNibName:@"ModifiySuccessViewController" bundle:nil];
+//                
+//                [self.navigationController pushViewController:success animated:YES];
             }
-    }];
-//            [task resume];
-    
-            //2跳转
-            ModifiySuccessViewController *success =[[ ModifiySuccessViewController alloc] initWithNibName:@"ModifiySuccessViewController" bundle:nil];
             
-            [self.navigationController pushViewController:success animated:YES];
+            
           
        };
+       
+        
+        
+        
+        
     }
 
     return footerView;

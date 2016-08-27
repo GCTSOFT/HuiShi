@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"重置成功";
+    
+//    [self.navigationItem setHidesBackButton:YES];
 }
 
 - (IBAction)loginAgain:(id)sender {

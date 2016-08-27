@@ -751,7 +751,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Fuyuan Wang (SNUE2997HU)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HuiShi/PrefixHeader.pch";
 				INFOPLIST_FILE = HuiShi/Info.plist;
@@ -763,7 +763,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DiZiiPad.Huishi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fc24eec9-731f-4ebf-8181-a2fc0860561b";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -772,7 +772,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Fuyuan Wang (SNUE2997HU)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HuiShi/PrefixHeader.pch";
 				INFOPLIST_FILE = HuiShi/Info.plist;
@@ -784,7 +784,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DiZiiPad.Huishi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fc24eec9-731f-4ebf-8181-a2fc0860561b";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
