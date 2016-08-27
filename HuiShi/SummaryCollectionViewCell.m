@@ -7,6 +7,7 @@
 //
 
 #import "SummaryCollectionViewCell.h"
+#import "UIColor+Extend.h"
 
 @implementation SummaryCollectionViewCell
 
@@ -16,6 +17,11 @@
 
 @implementation SummaryMainCell
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.bgView.layer.cornerRadius = 10;
+}
 
 @end
 
@@ -33,6 +39,8 @@
 
 - (void)initialView
 {
+    self.backgroundColor = [UIColor colorWithHex:0xE8E8E8];
+    self.contentView.backgroundColor = [UIColor colorWithHex:0xE8E8E8];
     self.firstView = [[SummarySubItemView alloc] init];
     self.secondView = [[SummarySubItemView alloc] init];
     self.thirdView = [[SummarySubItemView alloc] init];
@@ -42,6 +50,10 @@
     self.firstView.delegate = self;
     self.secondView.delegate = self;
     self.thirdView.delegate = self;
+    self.firstView.button.backgroundColor = [UIColor colorWithHex:0xefaa62];
+    self.secondView.button.backgroundColor = [UIColor colorWithHex:0xeb5c50];
+    self.thirdView.button.backgroundColor = [UIColor colorWithHex:0x5fd9e9];
+    
     [self.contentView addSubview:self.firstView];
     [self.contentView addSubview:self.thirdView];
     [self.contentView addSubview:self.secondView];
@@ -74,7 +86,6 @@
 
 @property (nonatomic, strong) UIImageView *fenImageView;
 @property (nonatomic, strong) UIImageView *paimingImageView;
-@property (nonatomic, strong) UIButton *button;
 
 @end
 
@@ -106,17 +117,16 @@
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.button.translatesAutoresizingMaskIntoConstraints = NO;
-    self.button.layer.cornerRadius = 5;
-    self.button.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.button.layer.borderWidth = .5;
-    self.button.backgroundColor = [UIColor whiteColor];
+    self.button.layer.cornerRadius = 10;
+//    self.button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//    self.button.layer.borderWidth = .5;
     [self addSubview:self.button];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[V2]-5-|" options:0 metrics:0 views:@{@"V2": self.button}]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[V2]-5-|" options:0 metrics:0 views:@{@"V2": self.button}]];
     
     self.titleLabel = [[UILabel alloc] init];
-    self.titleLabel.textColor = [UIColor blackColor];
-    self.titleLabel.font = [UIFont systemFontOfSize:15];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.font = [UIFont systemFontOfSize:17];
     self.titleLabel.text = @"KPI执行";
     self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.titleLabel];
@@ -131,9 +141,9 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V2(==25)]-20-|" options:0 metrics:0 views:@{@"V2": self.fenImageView}]];
     
     self.fenLabel = [[UILabel alloc] init];
-    self.fenLabel.textColor = [UIColor blueColor];
+    self.fenLabel.textColor = [UIColor whiteColor];
     self.fenLabel.text = @"10";
-    self.fenLabel.font = [UIFont systemFontOfSize:30];
+    self.fenLabel.font = [UIFont systemFontOfSize:33];
     self.fenLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.fenLabel];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[V2(==40)]" options:0 metrics:0 views:@{@"V2": self.fenLabel}]];
@@ -147,9 +157,9 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V2(==25)]-15-|" options:0 metrics:0 views:@{@"V2": self.paimingImageView}]];
     
     self.paimingLabel = [[UILabel alloc] init];
-    self.paimingLabel.textColor = [UIColor blueColor];
+    self.paimingLabel.textColor = [UIColor whiteColor];
     self.paimingLabel.text = @"8";
-    self.paimingLabel.font = [UIFont systemFontOfSize:30];
+    self.paimingLabel.font = [UIFont systemFontOfSize:33];
     self.paimingLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.paimingLabel];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-150-[V2(==40)]" options:0 metrics:0 views:@{@"V2": self.paimingLabel}]];

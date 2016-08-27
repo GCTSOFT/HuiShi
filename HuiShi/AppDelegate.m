@@ -45,6 +45,11 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     /// Required -    DeviceToken
     [JPUSHService registerDeviceToken:deviceToken];
+    
+    NSSet *set = [NSSet setWithObjects:@"zhuguan", nil];
+    [JPUSHService setTags:set alias:@"test1" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+        NSLog(@"%d, %@, %@", iResCode, iTags, iAlias);
+    }];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

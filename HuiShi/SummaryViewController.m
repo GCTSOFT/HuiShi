@@ -26,17 +26,16 @@
     self.listArray = [@[@"10",@"5",@"8",@"6",@"4",@"1",@"8"] copy];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
     self.viewHistory.layer.borderWidth = .5;
     self.viewHistory.layer.cornerRadius = 5.;
-    self.viewHistory.layer.borderColor = [UIColor blueColor].CGColor;
+    self.viewHistory.layer.borderColor = [UIColor blackColor].CGColor;
     [self.viewHistory setTitle:@"2016年4月" forState:UIControlStateNormal];
-    [self.tableView addHeaderWithRefreshHandler:^(RefreshBaseView *refreshView) {
-        // 下啦刷新
-    }];
-    [self.tableView addFooterWithRefreshHandler:^(RefreshBaseView *refreshView) {
-        // 上啦加载
-    }];
+//    [self.tableView addHeaderWithRefreshHandler:^(RefreshBaseView *refreshView) {
+//        // 下啦刷新
+//    }];
+//    [self.tableView addFooterWithRefreshHandler:^(RefreshBaseView *refreshView) {
+//        // 上啦加载
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,10 +47,6 @@
 {
     if (indexPath.row == 0) {
         SummaryMainCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SummaryMainCell"];
-        cell.bgView.layer.cornerRadius = 5;
-        cell.bgView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        cell.bgView.layer.borderWidth = .5;
-        cell.contentView.backgroundColor = [UIColor lightGrayColor];
         return cell;
     } else {
         SummarySubCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SummarySubCell"];
@@ -59,7 +54,6 @@
             cell = [[SummarySubCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SummarySubCell"];
         }
         cell.delegate = self;
-        cell.contentView.backgroundColor = [UIColor lightGrayColor];
         return cell;
     }
 }
@@ -72,9 +66,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        return 90;
+        return 122
+        ;
     } else {
-        return 150;
+        return 134;
     }
 }
 

@@ -45,10 +45,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    if (!AppUContext.isLogin) {
-        HSLoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HSLoginViewController"];
-        [self presentViewController:vc animated:NO completion:nil];
-    }
+//    if (!AppUContext.isLogin) {
+//        HSLoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HSLoginViewController"];
+//        [self presentViewController:vc animated:NO completion:nil];
+//    }
     
     [self _setupLeftBarButtonItem];
     [self _setupRightBarButtonItem];
@@ -181,24 +181,36 @@
 
 - (void)_setupLeftBarButtonItem
 {
-    UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 49, 49)];
+    UIView *aview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 140+170, 49)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aview];
-    UIImageView *imgview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 49, 49)];
+    UIImageView *imgview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 14, 140, 21)];
+    imgview.image = [UIImage imageNamed:@"home_navtitle"];
     [aview addSubview:imgview];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imgview.frame.size.width+5, 0, 49, 49)];
-    label.font = [UIFont systemFontOfSize:38];
-    label.textColor = [UIColor redColor];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imgview.frame.size.width+5, 0, 170, 49)];
+    label.font = [UIFont systemFontOfSize:21];
+    label.text = @"过程评估管理系统";
+    label.textColor = [UIColor whiteColor];
     [aview addSubview:label];
 }
 
 - (void)_setupRightBarButtonItem
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 69, 49);
-    button.backgroundColor = [UIColor redColor];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    button.frame = CGRectMake(0, 0, 26+50+10, 49);
+    button.backgroundColor = [UIColor clearColor];
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_navusercenter"]];
+    imgView.frame = CGRectMake(0, 11, 26, 26);
+    [button addSubview:imgView];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(imgView.frame.size.width+10, 0, 100, 49)];
+    label.font = [UIFont systemFontOfSize:15];
+    label.text = @"张晓明";
+    label.textColor = [UIColor whiteColor];
+    [button addSubview:label];
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    UIBarButtonItem *spaceitem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    spaceitem.width = -5;
+    self.navigationItem.rightBarButtonItems = @[buttonItem, spaceitem];
     [button addTarget:self action:@selector(userCenter:) forControlEvents:UIControlEventTouchUpInside];
-    
 }
 
 #pragma mark - private

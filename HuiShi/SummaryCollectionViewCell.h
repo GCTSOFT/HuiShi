@@ -61,6 +61,7 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *fenLabel;
 @property (strong, nonatomic) UILabel *paimingLabel;
+@property (nonatomic, strong) UIButton *button;
 
 @property (nonatomic, assign) id<SummarySubViewDelegate>delegate;
 
