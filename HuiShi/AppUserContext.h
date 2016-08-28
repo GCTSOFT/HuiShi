@@ -28,4 +28,6 @@ typedef void (^UserCallBack)(id data);
 
 - (void)loginWithAccount:(NSString *)account password:(NSString *)password callback:(UserCallBack)callback isauto:(BOOL)autoL;
 
+- (void)resetLoginWithOldpassword:(NSString *)oldpassword newpassword:(NSString *)newpasswod success:(UserCallBack)success failure:(UserCallBack)failure;
+
 @end

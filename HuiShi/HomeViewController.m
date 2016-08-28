@@ -8,16 +8,15 @@
 
 #import "HomeViewController.h"
 #import "HSLoginViewController.h"
+#import "NewSettingTableViewController.h"
 
 #import "HomeMenuItem.h"
-#import "AppUserContext.h"
-#import "Base64.h"
-
 #import "HomeTableViewCell.h"
 #import "SummaryCollectionViewCell.h"
 #import "DatePopView.h"
 
-#import "NewSettingTableViewController.h"
+#import "CommonDefine.h"
+#import "DataRequest.h"
 
 #define Cell_Gailan 0      // 概览
 #define Cell_MinePaiming 1 // 我的排名
@@ -175,8 +174,38 @@
 }
 
 #pragma mark - private
+static int i = 0;
 - (void)userCenter:(UIButton *)button
 {
+    if (i == 0) {
+        [DataRequest requestOwnRankWithRegion:@"" year:@"" month:@"" success:^(id data) {
+            
+        } failure:^(id data) {
+            
+        }];
+        i = 1;
+    } else if (i == 1) {
+        [DataRequest requestTeamRankWithRegion:@"" year:@"" month:@"" success:^(id data) {
+            
+        } failure:^(id data) {
+            
+        }];
+        i = 2;
+    } else if (i == 2) {
+        [DataRequest requestSubordinateRankWithRegion:@"" year:@"" month:@"" success:^(id data) {
+            
+        } failure:^(id data) {
+            
+        }];
+        i = 3;
+    } else if (i == 3) {
+        [AppUContext resetLoginWithOldpassword:@"" newpassword:@"" success:^(id data) {
+            
+        } failure:^(id data) {
+            
+        }];
+        i = 0;
+    }
 }
 
 - (void)_setupLeftBarButtonItem
