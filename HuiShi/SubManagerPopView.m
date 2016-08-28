@@ -38,6 +38,11 @@
 
 - (void)initialView
 {
+    self.layer.cornerRadius = 10.;
+    self.layer.borderColor = [UIColor grayColor].CGColor;
+    self.layer.borderWidth = .5;
+    self.clipsToBounds = YES;
+    
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 64)];
     bgView.translatesAutoresizingMaskIntoConstraints = 0;
     bgView.backgroundColor = [UIColor whiteColor];
@@ -45,21 +50,29 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": bgView}]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[V1(64)]" options:0 metrics:0 views:@{@"V1": bgView}]];
     
+    UIView *sepView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 64)];
+    sepView.translatesAutoresizingMaskIntoConstraints = 0;
+    sepView.backgroundColor = [UIColor lightGrayColor];
+    [self addSubview:sepView];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": sepView}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-63-[V1(1)]" options:0 metrics:0 views:@{@"V1": sepView}]];
+    
     _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_closeButton setImage:[UIImage imageNamed:@"pop_close"] forState:UIControlStateNormal];
     _closeButton.translatesAutoresizingMaskIntoConstraints = NO;
     [bgView addSubview:_closeButton];
-    [bgView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V1(23)]-15-|" options:0 metrics:0 views:@{@"V1": _titleLabel}]];
-    [bgView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[V1(23)]" options:0 metrics:0 views:@{@"V1": _titleLabel}]];
+    [bgView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V1(23)]-15-|" options:0 metrics:0 views:@{@"V1": _closeButton}]];
+    [bgView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[V1(23)]" options:0 metrics:0 views:@{@"V1": _closeButton}]];
     
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.text = @"项目管理";
     _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.font = [UIFont systemFontOfSize:36];
+    _titleLabel.font = [UIFont systemFontOfSize:18];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [bgView addSubview:_titleLabel];
     [bgView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": _titleLabel}]];
-    [bgView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[V1]-0-]" options:0 metrics:0 views:@{@"V1": _titleLabel}]];
+    [bgView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": _titleLabel}]];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.delegate = self;
@@ -68,8 +81,8 @@
     _tableView.translatesAutoresizingMaskIntoConstraints = NO;
     _tableView.separatorColor = [UIColor clearColor];
     [self addSubview:_tableView];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": _tableView}]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[V1]-0-]" options:0 metrics:0 views:@{@"V1": _tableView}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-1-|" options:0 metrics:0 views:@{@"V1": _tableView}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[V1]-0-|" options:0 metrics:0 views:@{@"V1": _tableView}]];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
@@ -83,10 +96,13 @@
         itemView.translatesAutoresizingMaskIntoConstraints = NO;
         itemView.tag = 101;
         [cell.contentView addSubview:itemView];
-        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": itemView}]];
-        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[V1]-0-]" options:0 metrics:0 views:@{@"V1": itemView}]];
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V1(222)]" options:0 metrics:0 views:@{@"V1": itemView}]];
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V1(138)]" options:0 metrics:0 views:@{@"V1": itemView}]];
+        
+        [cell.contentView addConstraint:[NSLayoutConstraint constraintWithItem:itemView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:cell.contentView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+        [cell.contentView addConstraint:[NSLayoutConstraint constraintWithItem:itemView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:cell.contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     }
-    SummarySubItemView *itemView = [cell.contentView viewWithTag:101];
+    SubManagerItemView *itemView = [cell.contentView viewWithTag:101];
     itemView.delegate = self;
     [itemView setData:nil];
     return cell;
@@ -126,7 +142,7 @@
     PopBackView *bgView = [[PopBackView alloc] initWithFrame:wind.bounds];
     bgView.delegate = self;
     bgView.tag = kPopBackViewTag;
-    bgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+    bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.6];
     [wind addSubview:bgView];
     self.tag = 131;
     [bgView addSubview:self];
