@@ -54,6 +54,8 @@
 		84901B8F1D33E85500DA0E63 /* HuiShiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84901B8E1D33E85500DA0E63 /* HuiShiUITests.m */; };
 		849DA4591D6074430019E469 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 849DA4581D6074430019E469 /* Base64.m */; };
 		84D4C8F31D3E846F002964A4 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D4C8F21D3E846F002964A4 /* HomeTableViewCell.m */; };
+		D2A60C5B1D71A1190043EAFB /* subManagerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A60C591D71A1190043EAFB /* subManagerTableViewCell.m */; };
+		D2A60C5C1D71A1190043EAFB /* subManagerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A60C5A1D71A1190043EAFB /* subManagerTableViewCell.xib */; };
 		D2C94A161D6FD71E00B3EB97 /* NewSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C94A141D6FD71E00B3EB97 /* NewSettingTableViewController.m */; };
 		D2C94A171D6FD71E00B3EB97 /* NewSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C94A151D6FD71E00B3EB97 /* NewSettingTableViewController.xib */; };
 		D2C94A1B1D6FD85700B3EB97 /* ModifiyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C94A191D6FD85700B3EB97 /* ModifiyTableViewController.m */; };
@@ -168,6 +170,9 @@
 		849DA4581D6074430019E469 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		84D4C8F11D3E846F002964A4 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		84D4C8F21D3E846F002964A4 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		D2A60C581D71A1190043EAFB /* subManagerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subManagerTableViewCell.h; sourceTree = "<group>"; };
+		D2A60C591D71A1190043EAFB /* subManagerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = subManagerTableViewCell.m; sourceTree = "<group>"; };
+		D2A60C5A1D71A1190043EAFB /* subManagerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subManagerTableViewCell.xib; sourceTree = "<group>"; };
 		D2C94A131D6FD71E00B3EB97 /* NewSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewSettingTableViewController.h; sourceTree = "<group>"; };
 		D2C94A141D6FD71E00B3EB97 /* NewSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewSettingTableViewController.m; sourceTree = "<group>"; };
 		D2C94A151D6FD71E00B3EB97 /* NewSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewSettingTableViewController.xib; sourceTree = "<group>"; };
@@ -396,6 +401,9 @@
 				8473C26B1D6DF09F0099892F /* DatePopView.m */,
 				8461A2321D6F1B5100F1340E /* PopBackView.h */,
 				8461A2331D6F1B5100F1340E /* PopBackView.m */,
+				D2A60C581D71A1190043EAFB /* subManagerTableViewCell.h */,
+				D2A60C591D71A1190043EAFB /* subManagerTableViewCell.m */,
+				D2A60C5A1D71A1190043EAFB /* subManagerTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -542,6 +550,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A60C5C1D71A1190043EAFB /* subManagerTableViewCell.xib in Resources */,
 				D2C94A1C1D6FD85700B3EB97 /* ModifiyTableViewController.xib in Resources */,
 				84835B881D558DD10014B98C /* PushConfig.plist in Resources */,
 				D2C94A251D6FD91A00B3EB97 /* FooterView.xib in Resources */,
@@ -589,6 +598,7 @@
 				8473C26C1D6DF09F0099892F /* DatePopView.m in Sources */,
 				84901B6E1D33E85500DA0E63 /* AppDelegate.m in Sources */,
 				D2C94A2C1D6FD9E400B3EB97 /* GuanYuViewController.m in Sources */,
+				D2A60C5B1D71A1190043EAFB /* subManagerTableViewCell.m in Sources */,
 				D2C94A161D6FD71E00B3EB97 /* NewSettingTableViewController.m in Sources */,
 				8473C2671D6DEF270099892F /* RefreshFooterView.m in Sources */,
 				8435BFB51D44A66600325CDD /* AppContext.m in Sources */,

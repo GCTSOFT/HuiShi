@@ -37,6 +37,11 @@
 - (TabBarViewController *)tabController
 {
     TabBarViewController *con = [AppContext.appdelegate.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
+        
+    for (UINavigationController * nav in con.viewControllers) {
+        NSLog(@"controller:%@",nav.viewControllers);
+    }
+    
     return con;
 }
 

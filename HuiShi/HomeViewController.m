@@ -143,6 +143,8 @@
     NSDictionary * userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:indexPath.row],@"index", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectTabBarViewControllerIndexNotification" object:nil userInfo:userInfo];
     
+    NSLog(@"indexPath.row:%ld",(long)indexPath.row);
+    
 #warning  -- ceshishezhi 测试
     
     if (indexPath.row == 0) {
