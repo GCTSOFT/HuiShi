@@ -30,6 +30,7 @@
 		8473C2681D6DEF270099892F /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2611D6DEF270099892F /* RefreshHeaderView.m */; };
 		8473C2691D6DEF270099892F /* UIScrollView+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2631D6DEF270099892F /* UIScrollView+Refresh.m */; };
 		8473C26C1D6DF09F0099892F /* DatePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C26B1D6DF09F0099892F /* DatePopView.m */; };
+		8483152C1D71E23300052FAE /* SortPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483152B1D71E23300052FAE /* SortPopView.m */; };
 		84835B711D5588FA0014B98C /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B6F1D5588FA0014B98C /* jpush-ios-2.1.8.a */; };
 		84835B731D5589220014B98C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B721D5589220014B98C /* CFNetwork.framework */; };
 		84835B751D55892C0014B98C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B741D55892C0014B98C /* CoreFoundation.framework */; };
@@ -133,6 +134,8 @@
 		8473C2631D6DEF270099892F /* UIScrollView+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+Refresh.m"; path = "CLRefresh/UIScrollView+Refresh.m"; sourceTree = "<group>"; };
 		8473C26A1D6DF09F0099892F /* DatePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePopView.h; sourceTree = "<group>"; };
 		8473C26B1D6DF09F0099892F /* DatePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePopView.m; sourceTree = "<group>"; };
+		8483152A1D71E23300052FAE /* SortPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortPopView.h; sourceTree = "<group>"; };
+		8483152B1D71E23300052FAE /* SortPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortPopView.m; sourceTree = "<group>"; };
 		84835B6F1D5588FA0014B98C /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jpush-ios-2.1.8.a"; path = "lib/jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
 		84835B701D5588FA0014B98C /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPUSHService.h; path = lib/JPUSHService.h; sourceTree = "<group>"; };
 		84835B721D5589220014B98C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -397,6 +400,8 @@
 				84650F941D4F84FF00A098F6 /* SummaryCollectionViewCell.m */,
 				8461A2391D6F48B300F1340E /* SubManagerPopView.h */,
 				8461A23A1D6F48B300F1340E /* SubManagerPopView.m */,
+				8483152A1D71E23300052FAE /* SortPopView.h */,
+				8483152B1D71E23300052FAE /* SortPopView.m */,
 				8473C26A1D6DF09F0099892F /* DatePopView.h */,
 				8473C26B1D6DF09F0099892F /* DatePopView.m */,
 				8461A2321D6F1B5100F1340E /* PopBackView.h */,
@@ -591,6 +596,7 @@
 				84901B711D33E85500DA0E63 /* ViewController.m in Sources */,
 				8473C2681D6DEF270099892F /* RefreshHeaderView.m in Sources */,
 				8458F30C1D3E61B9001BAD1E /* MissonViewController.m in Sources */,
+				8483152C1D71E23300052FAE /* SortPopView.m in Sources */,
 				84D4C8F31D3E846F002964A4 /* HomeTableViewCell.m in Sources */,
 				8473C2661D6DEF270099892F /* RefreshBaseView.m in Sources */,
 				8423D4D01D36856800194E2A /* HSLoginViewController.m in Sources */,

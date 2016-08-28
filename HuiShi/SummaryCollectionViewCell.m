@@ -46,6 +46,7 @@
     self.thirdView = [[SummarySubItemView alloc] init];
     self.firstView.tag = 0;
     self.secondView.tag = 1;
+    self.secondView.arrowImageView.hidden = NO;
     self.thirdView.tag = 2;
     self.firstView.delegate = self;
     self.secondView.delegate = self;
@@ -133,6 +134,14 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[V2(==120)]" options:0 metrics:0 views:@{@"V2": self.titleLabel}]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[V2(==25)]" options:0 metrics:0 views:@{@"V2": self.titleLabel}]];
     
+    self.arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"home_arrow"]];
+    self.arrowImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:self.arrowImageView];
+    self.arrowImageView.hidden = YES;
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V2(==9)]-29-|" options:0 metrics:0 views:@{@"V2": self.arrowImageView}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-18-[V2(==15)]" options:0 metrics:0 views:@{@"V2": self.arrowImageView}]];
+    
+    
     self.fenImageView = [[UIImageView alloc] init];
     self.fenImageView.translatesAutoresizingMaskIntoConstraints = NO;
     self.fenImageView.image = [UIImage imageNamed:@"fen1"];
@@ -164,8 +173,32 @@
     [self addSubview:self.paimingLabel];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-150-[V2(==40)]" options:0 metrics:0 views:@{@"V2": self.paimingLabel}]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V2(==40)]-15-|" options:0 metrics:0 views:@{@"V2": self.paimingLabel}]];
-
 }
 
 
 @end
+
+
+
+
+@implementation SubManagerItemView
+
+- (void)initialView
+{
+    [super initialView];
+    self.fenImageView.image = [UIImage imageNamed:@"pop_fen2"];
+    self.paimingImageView.image = [UIImage imageNamed:@"pop_paiming2"];
+    self.titleLabel.textColor = [UIColor redColor];
+    UIImage *im = [[UIImage imageNamed:@"pop_subitembg"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    [self.button setImage:im forState:UIControlStateNormal];
+    [self.button setBackgroundColor:[UIColor colorWithHex:0xE1443F]];
+    self.fenLabel.textColor = [UIColor redColor];
+    self.paimingLabel.textColor = [UIColor redColor];
+}
+
+@end
+
+
+
+
+

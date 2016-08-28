@@ -1,18 +1,15 @@
 //
-//  SubManagerPopView.m
+//  SortPopView.m
 //  HuiShi
 //
-//  Created by admin on 16/8/25.
+//  Created by admin on 16/8/27.
 //  Copyright © 2016年 DiZiCompanyLimited. All rights reserved.
 //
 
-#import "SubManagerPopView.h"
+#import "SortPopView.h"
 #import "PopBackView.h"
-#import "CommonDefine.h"
-#import "SummaryCollectionViewCell.h"
 
-
-@interface SubManagerPopView ()<UITableViewDelegate, UITableViewDataSource, SummarySubViewDelegate, PopBackViewDelegate>
+@interface SortPopView ()<UITableViewDelegate, UITableViewDataSource, PopBackViewDelegate>
 {
     UILabel *_titleLabel;
     UITableView *_tableView;
@@ -24,7 +21,7 @@
 
 @end
 
-@implementation SubManagerPopView
+@implementation SortPopView
 
 - (id)initWithFrame:(CGRect)frame data:(id)data
 {
@@ -42,7 +39,7 @@
     self.layer.borderColor = [UIColor grayColor].CGColor;
     self.layer.borderWidth = .5;
     self.clipsToBounds = YES;
-    
+
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 64)];
     bgView.translatesAutoresizingMaskIntoConstraints = 0;
     bgView.backgroundColor = [UIColor whiteColor];
@@ -67,8 +64,8 @@
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.text = @"项目管理";
     _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.font = [UIFont systemFontOfSize:18];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.font = [UIFont systemFontOfSize:18];
     _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [bgView addSubview:_titleLabel];
     [bgView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": _titleLabel}]];
@@ -81,7 +78,7 @@
     _tableView.translatesAutoresizingMaskIntoConstraints = NO;
     _tableView.separatorColor = [UIColor clearColor];
     [self addSubview:_tableView];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-1-|" options:0 metrics:0 views:@{@"V1": _tableView}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": _tableView}]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[V1]-0-|" options:0 metrics:0 views:@{@"V1": _tableView}]];
 }
 
@@ -92,25 +89,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:stri];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:stri];
-        SubManagerItemView *itemView = [[SubManagerItemView alloc] init];
+        paimingItemCell *itemView = [[paimingItemCell alloc] init];
         itemView.translatesAutoresizingMaskIntoConstraints = NO;
         itemView.tag = 101;
         [cell.contentView addSubview:itemView];
-        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V1(222)]" options:0 metrics:0 views:@{@"V1": itemView}]];
-        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V1(138)]" options:0 metrics:0 views:@{@"V1": itemView}]];
-        
-        [cell.contentView addConstraint:[NSLayoutConstraint constraintWithItem:itemView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:cell.contentView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
-        [cell.contentView addConstraint:[NSLayoutConstraint constraintWithItem:itemView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:cell.contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": itemView}]];
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[V1]-0-|" options:0 metrics:0 views:@{@"V1": itemView}]];
     }
-    SubManagerItemView *itemView = [cell.contentView viewWithTag:101];
-    itemView.delegate = self;
+    paimingItemCell *itemView = [cell.contentView viewWithTag:101];
     [itemView setData:nil];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150;
+    return 80;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -119,13 +112,13 @@
 }
 
 #pragma mark - SummarySubViewDelegate
-- (void)summaryButtonClick:(SummarySubItemView *)view
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(submanagerPop:data:)]) {
-        [self.delegate submanagerPop:self data:nil];
-    }
-    [self dismiss];
-}
+//- (void)summaryButtonClick:(SummarySubItemView *)view
+//{
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(submanagerPop:data:)]) {
+//        [self.delegate submanagerPop:self data:nil];
+//    }
+//    [self dismiss];
+//}
 
 #pragma mark - PopBackViewDelegate
 - (void)touchBgView:(UIView *)backView
@@ -160,3 +153,52 @@
 }
 
 @end
+
+
+
+@implementation paimingItemCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self initialView];
+    }
+    return self;
+}
+
+- (void)initialView
+{
+    self.bgButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.bgButton.layer.cornerRadius = 25.;
+    self.bgButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.bgButton setTitle:@"综合积分" forState:UIControlStateNormal];
+    [self.bgButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.bgButton.backgroundColor = [UIColor blueColor];
+    [self addSubview:self.bgButton];//376px107px
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V1(189)]" options:0 metrics:0 views:@{@"V1": self.bgButton}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V1(54)]" options:0 metrics:0 views:@{@"V1": self.bgButton}]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.bgButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1. constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.bgButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1. constant:0]];
+
+//    self.arrawImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pop_arrow"]];
+//    self.arrawImageView.translatesAutoresizingMaskIntoConstraints = NO;
+//    [self addSubview:self.arrawImageView];
+//    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[V1(189)]-|" options:0 metrics:0 views:@{@"V1": self.bgButton}]];
+//    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[V1(54)]-|" options:0 metrics:0 views:@{@"V1": self.bgButton}]];
+    self.selectImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pop_select"]];
+    self.selectImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.bgButton addSubview:self.selectImageView];
+    [self.bgButton addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V1(20)]-25-|" options:0 metrics:0 views:@{@"V1": self.selectImageView}]];
+    [self.bgButton addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V1(15)]" options:0 metrics:0 views:@{@"V1": self.selectImageView}]];
+    [self.bgButton addConstraint:[NSLayoutConstraint constraintWithItem:self.selectImageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.bgButton attribute:NSLayoutAttributeCenterY multiplier:1. constant:0]];
+}
+
+- (void)setData:(id)data
+{
+    
+}
+
+@end
+
+
