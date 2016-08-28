@@ -62,10 +62,17 @@
 @property (strong, nonatomic) UILabel *fenLabel;
 @property (strong, nonatomic) UILabel *paimingLabel;
 @property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) UIImageView *arrowImageView;
 
 @property (nonatomic, assign) id<SummarySubViewDelegate>delegate;
 
 - (void)setData:(id)data;
+
+@end
+
+
+@interface SubManagerItemView : SummarySubItemView
+
 
 @end
 

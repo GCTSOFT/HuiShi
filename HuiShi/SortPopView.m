@@ -1,18 +1,15 @@
 //
-//  SubManagerPopView.m
+//  SortPopView.m
 //  HuiShi
 //
-//  Created by admin on 16/8/25.
+//  Created by admin on 16/8/27.
 //  Copyright © 2016年 DiZiCompanyLimited. All rights reserved.
 //
 
-#import "SubManagerPopView.h"
+#import "SortPopView.h"
 #import "PopBackView.h"
-#import "CommonDefine.h"
-#import "SummaryCollectionViewCell.h"
 
-
-@interface SubManagerPopView ()<UITableViewDelegate, UITableViewDataSource, SummarySubViewDelegate, PopBackViewDelegate>
+@interface SortPopView ()<UITableViewDelegate, UITableViewDataSource, PopBackViewDelegate>
 {
     UILabel *_titleLabel;
     UITableView *_tableView;
@@ -24,7 +21,7 @@
 
 @end
 
-@implementation SubManagerPopView
+@implementation SortPopView
 
 - (id)initWithFrame:(CGRect)frame data:(id)data
 {
@@ -77,18 +74,18 @@
 {
     static NSString *stri = @"identifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:stri];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:stri];
-        SubManagerItemView *itemView = [[SubManagerItemView alloc] init];
-        itemView.translatesAutoresizingMaskIntoConstraints = NO;
-        itemView.tag = 101;
-        [cell.contentView addSubview:itemView];
-        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": itemView}]];
-        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[V1]-0-]" options:0 metrics:0 views:@{@"V1": itemView}]];
-    }
-    SummarySubItemView *itemView = [cell.contentView viewWithTag:101];
-    itemView.delegate = self;
-    [itemView setData:nil];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:stri];
+//        SubManagerItemView *itemView = [[SubManagerItemView alloc] init];
+//        itemView.translatesAutoresizingMaskIntoConstraints = NO;
+//        itemView.tag = 101;
+//        [cell.contentView addSubview:itemView];
+//        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[V1]-0-|" options:0 metrics:0 views:@{@"V1": itemView}]];
+//        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[V1]-0-]" options:0 metrics:0 views:@{@"V1": itemView}]];
+//    }
+//    SummarySubItemView *itemView = [cell.contentView viewWithTag:101];
+//    itemView.delegate = self;
+//    [itemView setData:nil];
     return cell;
 }
 
@@ -103,13 +100,13 @@
 }
 
 #pragma mark - SummarySubViewDelegate
-- (void)summaryButtonClick:(SummarySubItemView *)view
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(submanagerPop:data:)]) {
-        [self.delegate submanagerPop:self data:nil];
-    }
-    [self dismiss];
-}
+//- (void)summaryButtonClick:(SummarySubItemView *)view
+//{
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(submanagerPop:data:)]) {
+//        [self.delegate submanagerPop:self data:nil];
+//    }
+//    [self dismiss];
+//}
 
 #pragma mark - PopBackViewDelegate
 - (void)touchBgView:(UIView *)backView
@@ -144,3 +141,46 @@
 }
 
 @end
+
+
+
+@implementation paimingItemCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self initialView];
+    }
+    return self;
+}
+
+- (void)initialView
+{
+    self.bgButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.bgButton.layer.cornerRadius = 10.;
+    self.bgButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:self.bgButton];//376px107px
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V1(189)]" options:0 metrics:0 views:@{@"V1": self.bgButton}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V1(54)]" options:0 metrics:0 views:@{@"V1": self.bgButton}]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.bgButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1. constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.bgButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1. constant:0]];
+
+    self.arrawImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pop_arrow"]];
+    self.arrawImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:self.arrawImageView];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[V1(189)]" options:0 metrics:0 views:@{@"V1": self.bgButton}]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[V1(54)]" options:0 metrics:0 views:@{@"V1": self.bgButton}]];
+
+}
+
+- (void)setData:(id)data
+{
+    
+}
+
+@end
+
+
+
+
