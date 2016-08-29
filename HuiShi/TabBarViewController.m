@@ -19,15 +19,8 @@
     // Do any additional setup after loading the view.
     self.tabBar.hidden = YES;
     
-#warning  -- ceshitabbar
-    self.tabBar.hidden = YES;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectIndex:) name:@"SelectTabBarViewControllerIndexNotification" object:nil];
 }
-//-(void)selectIndex:(NSNotification*)noti{
-//    NSDictionary * userInfo = noti.userInfo;
-//    NSInteger selectIndex = [userInfo[@"index"] integerValue];
-//    self.selectedIndex = selectIndex;
-//}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

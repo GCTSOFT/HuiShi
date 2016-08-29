@@ -119,10 +119,6 @@
             }
         }];
         [task resume];
-    }else
-    {
-        NSLog(@"输入框为空");
-    
     }
 }
 

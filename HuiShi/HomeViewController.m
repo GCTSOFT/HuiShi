@@ -137,13 +137,7 @@
         [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
     
-//    NSDictionary * userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:indexPath.row],@"index", nil];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectTabBarViewControllerIndexNotification" object:nil userInfo:userInfo];
-    
     NSLog(@"indexPath.row:%ld",(long)indexPath.row);
-    
-#warning  -- ceshishezhi 测试
-    
     
     //处理跳转
     HomeMenuItem *selectItem = [self.listArray objectAtIndex:self.selectIndex];
