@@ -58,8 +58,8 @@
 */
 - (IBAction)LoginButtonClick:(UIButton *)sender
 {
-    self.accountLabel.text = @"chang.liu@wyethnutrition.com";
-    self.passwordLabel.text = @"888888";
+//    self.accountLabel.text = @"chang.liu@wyethnutrition.com";
+//    self.passwordLabel.text = @"666666";
     
     if (self.accountLabel.text.length > 0 && self.passwordLabel.text.length > 0) {
         if (self.isAuto == YES) {

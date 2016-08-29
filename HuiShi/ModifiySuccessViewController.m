@@ -8,6 +8,8 @@
 
 #import "ModifiySuccessViewController.h"
 #import "HSLoginViewController.h"
+#import "HomeViewController.h"
+#import "AppUserContext.h"
 @interface ModifiySuccessViewController ()
 
 @end
@@ -22,8 +24,19 @@
 }
 
 - (IBAction)loginAgain:(id)sender {
-
+    
+    //    AppUContext.token = nil;
+    //    AppUContext.account = nil;
+    //    AppUContext.password = nil;
+    //    AppUContext.autoLogin = NO;
+    //    AppUContext.isLogin = NO;
+    //    AppUContext.userLevel = 0;
+         HSLoginViewController *login = [self.storyboard instantiateViewControllerWithIdentifier:@"HSLoginViewController"];
+        [self presentViewController:login animated:NO completion:nil];
 }
+
+    
+
 
 
 - (void)didReceiveMemoryWarning {

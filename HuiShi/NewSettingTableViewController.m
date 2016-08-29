@@ -76,12 +76,12 @@
 {
     //点击关于按钮
     if (indexPath.row == 1) {
-        GuanYuViewController *guanYuVc = [[GuanYuViewController alloc] init];
+        GuanYuViewController *guanYuVc = [self.storyboard instantiateViewControllerWithIdentifier:@"GuanYuViewController"];
         [self.navigationController pushViewController:guanYuVc animated:YES];
         
     }else if (indexPath.row == 0){//点击修改密码
 
-        ModifiyTableViewController *modifiy = [[ModifiyTableViewController alloc]init];
+        ModifiyTableViewController *modifiy = [self.storyboard instantiateViewControllerWithIdentifier:@"ModifiyTableViewController"];
         [self.navigationController pushViewController:modifiy animated:YES];
     }
 

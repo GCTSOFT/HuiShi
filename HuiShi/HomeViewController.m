@@ -44,10 +44,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    if (!AppUContext.isLogin) {
-        HSLoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HSLoginViewController"];
-        [self presentViewController:vc animated:NO completion:nil];
-    }
+//    if (!AppUContext.isLogin) {
+//       
+//        HSLoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HSLoginViewController"];
+//        [self presentViewController:vc animated:NO completion:nil];
+//    }
     
     [self _setupLeftBarButtonItem];
     [self _setupRightBarButtonItem];
@@ -158,7 +159,7 @@
         NSLog(@"点击了第5行cell");
     }else if (indexPath.row == 5){
         NSLog(@"点击了第6行cell");
-        NewSettingTableViewController *settingVc = [[NewSettingTableViewController alloc] initWithNibName:@"NewSettingTableViewController" bundle:nil];
+        NewSettingTableViewController *settingVc = [self.storyboard instantiateViewControllerWithIdentifier:@"NewSettingTableViewController"];
         UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:settingVc];
         navi.preferredContentSize =CGSizeMake(300, 252);
         navi.modalPresentationStyle = UIModalPresentationFormSheet;
