@@ -34,10 +34,10 @@
     return [[UIApplication sharedApplication] delegate];
 }
 
-- (TabBarViewController *)tabController
-{
-    TabBarViewController *con = [AppContext.appdelegate.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
-    return con;
-}
+//- (TabBarViewController *)tabController
+//{
+//    TabBarViewController *con = [AppContext.appdelegate.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
+//    return con;
+//}
 
 @end

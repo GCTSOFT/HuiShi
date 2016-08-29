@@ -17,6 +17,8 @@
 			<false/>
 			<key>showtype</key>
 			<string>1</string>
+			<key>selectindex</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>image</key>
@@ -31,6 +33,8 @@
 			<false/>
 			<key>showtype</key>
 			<string>1</string>
+			<key>selectindex</key>
+			<integer>2</integer>
 			<key>subitem</key>
 			<array/>
 		</dict>
@@ -47,6 +51,8 @@
 			<false/>
 			<key>showtype</key>
 			<string>1</string>
+			<key>selectindex</key>
+			<integer>1000</integer>
 			<key>subitem</key>
 			<array/>
 		</dict>

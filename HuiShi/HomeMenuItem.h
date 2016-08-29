@@ -21,4 +21,6 @@
 
 @property (nonatomic, assign) HomeMenuItem *fItem;//父项
 
+@property (nonatomic, assign) int selectIndex;//tabbar index
+
 @end

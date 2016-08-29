@@ -53,9 +53,6 @@
     [self _setupRightBarButtonItem];
     AppContext.tabController.selectedIndex = 0;
     [self loadMenuPlist];
-    
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -139,73 +136,39 @@
         [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
     
-    NSDictionary * userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:indexPath.row],@"index", nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectTabBarViewControllerIndexNotification" object:nil userInfo:userInfo];
+//    NSDictionary * userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:indexPath.row],@"index", nil];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectTabBarViewControllerIndexNotification" object:nil userInfo:userInfo];
     
 #warning  -- ceshishezhi 测试
     
-    if (indexPath.row == 0) {
-        NSLog(@"点击了第1行cell");
-    }else if (indexPath.row == 1){
-        NSLog(@"点击了第2行cell");
-    }else if (indexPath.row == 2){
-        NSLog(@"点击了第3行cell");
-    }else if (indexPath.row == 3){
-        NSLog(@"点击了第4行cell");
-    }else if (indexPath.row == 4){
-        NSLog(@"点击了第5行cell");
-    }else if (indexPath.row == 5){
-        NSLog(@"点击了第6行cell");
+    
+    //处理跳转
+    HomeMenuItem *selectItem = [self.listArray objectAtIndex:self.selectIndex];
+    if (selectItem.selectIndex == -1) {
+        return;
+    } else if (selectItem.selectIndex == 1000) {
         NewSettingTableViewController *settingVc = [[NewSettingTableViewController alloc] initWithNibName:@"NewSettingTableViewController" bundle:nil];
         UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:settingVc];
         navi.preferredContentSize =CGSizeMake(300, 300);
         navi.modalPresentationStyle = UIModalPresentationFormSheet;
         
         [self presentViewController:navi animated:YES completion:nil];
-        
-        
+    } else {
+        AppContext.tabController.selectedIndex = selectItem.selectIndex;
     }
 }
 
-- (void)setSelectIndex:(NSInteger)selectIndex
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    _selectIndex = selectIndex;
-    //
+    TabBarViewController *tabbar = segue.destinationViewController;
+    if ([tabbar isKindOfClass:[TabBarViewController class]])
+        AppContext.tabController = tabbar;
 }
 
 #pragma mark - private
-static int i = 0;
 - (void)userCenter:(UIButton *)button
 {
-    if (i == 0) {
-        [DataRequest requestOwnRankWithRegion:@"" year:@"" month:@"" success:^(id data) {
-            
-        } failure:^(id data) {
-            
-        }];
-        i = 1;
-    } else if (i == 1) {
-        [DataRequest requestTeamRankWithRegion:@"" year:@"" month:@"" success:^(id data) {
-            
-        } failure:^(id data) {
-            
-        }];
-        i = 2;
-    } else if (i == 2) {
-        [DataRequest requestSubordinateRankWithRegion:@"" year:@"" month:@"" success:^(id data) {
-            
-        } failure:^(id data) {
-            
-        }];
-        i = 3;
-    } else if (i == 3) {
-        [AppUContext resetLoginWithOldpassword:@"" newpassword:@"" success:^(id data) {
-            
-        } failure:^(id data) {
-            
-        }];
-        i = 0;
-    }
+    
 }
 
 - (void)_setupLeftBarButtonItem
@@ -262,6 +225,7 @@ static int i = 0;
             item.isSelected = [[dic objectForKey:@"isselected"] boolValue];
             item.showType = [[dic objectForKey:@"showtype"] intValue];
             item.showType = 1;
+            item.selectIndex = [[dic objectForKey:@"selectindex"] intValue];
             NSMutableArray *aaa = [dic objectForKey:@"subitem"];
             if (aaa.count > 0) {
                 NSMutableArray *ar = [NSMutableArray array];
@@ -275,6 +239,7 @@ static int i = 0;
                     aitem.isSelected = [[adic objectForKey:@"isselected"] boolValue];
                     aitem.showType = [[adic objectForKey:@"showtype"] intValue];
                     aitem.showType = 2;
+                    aitem.selectIndex = [[adic objectForKey:@"selectindex"] intValue];
                     aitem.fItem = item;
                     [ar addObject:aitem];
                 }
@@ -294,6 +259,7 @@ static int i = 0;
     item.isExpand = [[dic objectForKey:@"isexpand"] boolValue];
     item.isSelected = [[dic objectForKey:@"isselected"] boolValue];
     item.showType = [[dic objectForKey:@"showtype"] intValue];
+    item.selectIndex = [[dic objectForKey:@"selectindex"] intValue];
     item.showType = 1;
     NSMutableArray *aaa = [dic objectForKey:@"subitem"];
     if (aaa.count > 0) {
@@ -301,6 +267,7 @@ static int i = 0;
         for (int i = 0; i < aaa.count; i++) {
             NSDictionary *adic = [aaa objectAtIndex:i];
             HomeMenuItem *aitem = [[HomeMenuItem alloc] init];
+            aitem.selectIndex = [[adic objectForKey:@"selectindex"] intValue];
             [self parseObject:aitem dicData:adic];
             aitem.fItem = item;
             [ar addObject:aitem];

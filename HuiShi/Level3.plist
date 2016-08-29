@@ -15,6 +15,8 @@
 			<false/>
 			<key>isselected</key>
 			<false/>
+			<key>selectindex</key>
+			<integer>-1</integer>
 			<key>showtype</key>
 			<string>1</string>
 			<key>subitem</key>
@@ -22,14 +24,20 @@
 				<dict>
 					<key>name</key>
 					<string>团队排名</string>
+					<key>selectindex</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>下属排名</string>
+					<key>selectindex</key>
+					<integer>1</integer>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>自身排名</string>
+					<key>selectindex</key>
+					<integer>0</integer>
 				</dict>
 			</array>
 		</dict>
@@ -46,6 +54,8 @@
 			<false/>
 			<key>showtype</key>
 			<string>1</string>
+			<key>selectindex</key>
+			<integer>2</integer>
 			<key>subitem</key>
 			<array/>
 		</dict>
@@ -62,6 +72,8 @@
 			<false/>
 			<key>showtype</key>
 			<string>1</string>
+			<key>selectindex</key>
+			<integer>1000</integer>
 			<key>subitem</key>
 			<array/>
 		</dict>
