@@ -44,10 +44,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    if (!AppUContext.isLogin) {
-        HSLoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HSLoginViewController"];
-        [self presentViewController:vc animated:NO completion:nil];
-    }
+//    if (!AppUContext.isLogin) {
+//       
+//        HSLoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HSLoginViewController"];
+//        [self presentViewController:vc animated:NO completion:nil];
+//    }
     
     [self _setupLeftBarButtonItem];
     [self _setupRightBarButtonItem];
@@ -139,6 +140,8 @@
 //    NSDictionary * userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:indexPath.row],@"index", nil];
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectTabBarViewControllerIndexNotification" object:nil userInfo:userInfo];
     
+    NSLog(@"indexPath.row:%ld",(long)indexPath.row);
+    
 #warning  -- ceshishezhi 测试
     
     
@@ -149,7 +152,7 @@
     } else if (selectItem.selectIndex == 1000) {
         NewSettingTableViewController *settingVc = [[NewSettingTableViewController alloc] initWithNibName:@"NewSettingTableViewController" bundle:nil];
         UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:settingVc];
-        navi.preferredContentSize =CGSizeMake(300, 300);
+        navi.preferredContentSize =CGSizeMake(300, 252);
         navi.modalPresentationStyle = UIModalPresentationFormSheet;
         
         [self presentViewController:navi animated:YES completion:nil];

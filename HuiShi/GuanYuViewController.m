@@ -17,9 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"关于";
-
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(0, 0, 40, 40);
+    
+    [backBtn setImage:[UIImage imageNamed:@"Writeoffs_btn@2x.png"] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(doBack:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backItem;
     
 }
+-(void)doBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

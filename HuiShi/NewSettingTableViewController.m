@@ -17,17 +17,28 @@
 @implementation NewSettingTableViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"选项设置";
-    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc]initWithTitle:@"关闭" style:UIBarButtonItemStyleDone target:self action:@selector(clickCloseItem:)];
     
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(0, 0, 50, 50);
+    [btn setTitle:@"关闭" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor colorWithRed:252/255.0 green:121/255.0 blue:65/255.0 alpha:1] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(clickCloseItem:) forControlEvents:(UIControlEventTouchUpInside)];
+    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = closeItem;
     
 }
-- (void)clickCloseItem:(UIButton *)sender
+- (void)clickCloseItem:(id)sender
 {
     [self.navigationController dismissViewControllerAnimated:NO completion:nil];
     
+}
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.1;
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -65,15 +76,19 @@
 {
     //点击关于按钮
     if (indexPath.row == 1) {
-        GuanYuViewController *guanYuVc = [[GuanYuViewController alloc] init];
+        GuanYuViewController *guanYuVc = [self.storyboard instantiateViewControllerWithIdentifier:@"GuanYuViewController"];
         [self.navigationController pushViewController:guanYuVc animated:YES];
         
     }else if (indexPath.row == 0){//点击修改密码
 
-        ModifiyTableViewController *modifiy = [[ModifiyTableViewController alloc]init];
+        ModifiyTableViewController *modifiy = [self.storyboard instantiateViewControllerWithIdentifier:@"ModifiyTableViewController"];
         [self.navigationController pushViewController:modifiy animated:YES];
     }
 
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 65;
 }
 
 /*
