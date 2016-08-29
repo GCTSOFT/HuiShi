@@ -30,6 +30,7 @@
 		8473C2681D6DEF270099892F /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2611D6DEF270099892F /* RefreshHeaderView.m */; };
 		8473C2691D6DEF270099892F /* UIScrollView+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2631D6DEF270099892F /* UIScrollView+Refresh.m */; };
 		8473C26C1D6DF09F0099892F /* DatePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C26B1D6DF09F0099892F /* DatePopView.m */; };
+		847F172A1D7480A10065BF7E /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F17291D7480A10065BF7E /* FileManager.m */; };
 		8483152C1D71E23300052FAE /* SortPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483152B1D71E23300052FAE /* SortPopView.m */; };
 		8483152F1D72B83100052FAE /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483152E1D72B83100052FAE /* DataRequest.m */; };
 		848315321D72D8EA00052FAE /* DataParseBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 848315311D72D8EA00052FAE /* DataParseBaseObject.m */; };
@@ -134,6 +135,8 @@
 		8473C2631D6DEF270099892F /* UIScrollView+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+Refresh.m"; path = "CLRefresh/UIScrollView+Refresh.m"; sourceTree = "<group>"; };
 		8473C26A1D6DF09F0099892F /* DatePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePopView.h; sourceTree = "<group>"; };
 		8473C26B1D6DF09F0099892F /* DatePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePopView.m; sourceTree = "<group>"; };
+		847F17281D7480A10065BF7E /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		847F17291D7480A10065BF7E /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
 		8483152A1D71E23300052FAE /* SortPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortPopView.h; sourceTree = "<group>"; };
 		8483152B1D71E23300052FAE /* SortPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortPopView.m; sourceTree = "<group>"; };
 		8483152D1D72B83100052FAE /* DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRequest.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				848315311D72D8EA00052FAE /* DataParseBaseObject.m */,
 				848315331D72DAFD00052FAE /* DataBaseItem.h */,
 				848315341D72DAFD00052FAE /* DataBaseItem.m */,
+				847F17281D7480A10065BF7E /* FileManager.h */,
+				847F17291D7480A10065BF7E /* FileManager.m */,
 				8461A2351D6F1EA700F1340E /* CommonDefine.h */,
 			);
 			name = Module;
@@ -633,6 +638,7 @@
 				D2C94A261D6FD91A00B3EB97 /* FooterView.m in Sources */,
 				84835B991D55AE690014B98C /* SSKeychain.m in Sources */,
 				8461A2341D6F1B5100F1340E /* PopBackView.m in Sources */,
+				847F172A1D7480A10065BF7E /* FileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
