@@ -8,6 +8,7 @@
 
 #import "AppUserContext.h"
 #import "SSKeychain.h"
+#import "CommonDefine.h"
 
 @interface AppUserContext ()
 {
@@ -82,19 +83,43 @@
 {
     
     NSData *requestData = [[NSString stringWithFormat:@"username=%@&password=%@", account, password] dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSURL *ru = [NSURL URLWithString:@"http://wyeth.api.hih6.com/site/login"];
-    
+    NSURL *ru = [NSURL URLWithString:kDengLuUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
     request.HTTPMethod = @"POST";
     request.HTTPBody = requestData;
-    
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         callback(data);
     }];
     [task resume];
     
     NSLog(@"发送请求成功");
+}
+
+- (void)resetLoginWithOldpassword:(NSString *)oldpassword newpassword:(NSString *)newpasswod success:(UserCallBack)success failure:(UserCallBack)failure
+{
+    if (oldpassword.length > 0 && newpasswod.length > 0) {
+        NSString *sss = [NSString stringWithFormat:@"%@:111111", AppUContext.token];
+        NSURL *ru = [NSURL URLWithString:kXiuGaiMiMaUrl];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:ru];
+        request.HTTPMethod = @"POST";
+        NSData *bodydata = [[NSString stringWithFormat:@"oldpassword=%@&newpassword=%@", oldpassword, newpasswod] dataUsingEncoding:NSUTF8StringEncoding];
+        [request setHTTPBody:bodydata];
+        [request setValue:[NSString stringWithFormat:@"Basic %@",[sss base64EncodedString]] forHTTPHeaderField:@"Authorization"];
+        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            NSString *result = [dic objectForKey:@"status"];
+            if ([result isEqualToString:@"success"]) {
+                if (success) {
+                    success(dic);
+                }
+            } else {
+                if (failure) {
+                    failure(dic);
+                }
+            }
+        }];
+        [task resume];
+    }
 }
 
 @end

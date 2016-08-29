@@ -31,6 +31,9 @@
 		8473C2691D6DEF270099892F /* UIScrollView+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C2631D6DEF270099892F /* UIScrollView+Refresh.m */; };
 		8473C26C1D6DF09F0099892F /* DatePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473C26B1D6DF09F0099892F /* DatePopView.m */; };
 		8483152C1D71E23300052FAE /* SortPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483152B1D71E23300052FAE /* SortPopView.m */; };
+		8483152F1D72B83100052FAE /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483152E1D72B83100052FAE /* DataRequest.m */; };
+		848315321D72D8EA00052FAE /* DataParseBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 848315311D72D8EA00052FAE /* DataParseBaseObject.m */; };
+		848315351D72DAFD00052FAE /* DataBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 848315341D72DAFD00052FAE /* DataBaseItem.m */; };
 		84835B711D5588FA0014B98C /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B6F1D5588FA0014B98C /* jpush-ios-2.1.8.a */; };
 		84835B731D5589220014B98C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B721D5589220014B98C /* CFNetwork.framework */; };
 		84835B751D55892C0014B98C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84835B741D55892C0014B98C /* CoreFoundation.framework */; };
@@ -136,6 +139,12 @@
 		8473C26B1D6DF09F0099892F /* DatePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePopView.m; sourceTree = "<group>"; };
 		8483152A1D71E23300052FAE /* SortPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortPopView.h; sourceTree = "<group>"; };
 		8483152B1D71E23300052FAE /* SortPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortPopView.m; sourceTree = "<group>"; };
+		8483152D1D72B83100052FAE /* DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRequest.h; sourceTree = "<group>"; };
+		8483152E1D72B83100052FAE /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequest.m; sourceTree = "<group>"; };
+		848315301D72D8EA00052FAE /* DataParseBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParseBaseObject.h; sourceTree = "<group>"; };
+		848315311D72D8EA00052FAE /* DataParseBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParseBaseObject.m; sourceTree = "<group>"; };
+		848315331D72DAFD00052FAE /* DataBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseItem.h; sourceTree = "<group>"; };
+		848315341D72DAFD00052FAE /* DataBaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseItem.m; sourceTree = "<group>"; };
 		84835B6F1D5588FA0014B98C /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jpush-ios-2.1.8.a"; path = "lib/jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
 		84835B701D5588FA0014B98C /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPUSHService.h; path = lib/JPUSHService.h; sourceTree = "<group>"; };
 		84835B721D5589220014B98C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -248,6 +257,12 @@
 				84835B8A1D55A89D0014B98C /* AppUserContext.m */,
 				845BC08D1D649D4200091C1B /* HomeMenuItem.h */,
 				845BC08E1D649D4200091C1B /* HomeMenuItem.m */,
+				8483152D1D72B83100052FAE /* DataRequest.h */,
+				8483152E1D72B83100052FAE /* DataRequest.m */,
+				848315301D72D8EA00052FAE /* DataParseBaseObject.h */,
+				848315311D72D8EA00052FAE /* DataParseBaseObject.m */,
+				848315331D72DAFD00052FAE /* DataBaseItem.h */,
+				848315341D72DAFD00052FAE /* DataBaseItem.m */,
 				8461A2351D6F1EA700F1340E /* CommonDefine.h */,
 			);
 			name = Module;
@@ -600,6 +615,7 @@
 				84D4C8F31D3E846F002964A4 /* HomeTableViewCell.m in Sources */,
 				8473C2661D6DEF270099892F /* RefreshBaseView.m in Sources */,
 				8423D4D01D36856800194E2A /* HSLoginViewController.m in Sources */,
+				848315321D72D8EA00052FAE /* DataParseBaseObject.m in Sources */,
 				84650F951D4F84FF00A098F6 /* SummaryCollectionViewCell.m in Sources */,
 				8473C26C1D6DF09F0099892F /* DatePopView.m in Sources */,
 				84901B6E1D33E85500DA0E63 /* AppDelegate.m in Sources */,
@@ -607,6 +623,7 @@
 				D2A60C5B1D71A1190043EAFB /* subManagerTableViewCell.m in Sources */,
 				D2C94A161D6FD71E00B3EB97 /* NewSettingTableViewController.m in Sources */,
 				8473C2671D6DEF270099892F /* RefreshFooterView.m in Sources */,
+				8483152F1D72B83100052FAE /* DataRequest.m in Sources */,
 				8435BFB51D44A66600325CDD /* AppContext.m in Sources */,
 				845BC08F1D649D4200091C1B /* HomeMenuItem.m in Sources */,
 				8458F3031D3E612C001BAD1E /* HomeViewController.m in Sources */,
@@ -617,6 +634,7 @@
 				8435BFB11D44998B00325CDD /* TabBarViewController.m in Sources */,
 				84835B8B1D55A89D0014B98C /* AppUserContext.m in Sources */,
 				8411F6301D6B4F8800F0255B /* UIColor+Extend.m in Sources */,
+				848315351D72DAFD00052FAE /* DataBaseItem.m in Sources */,
 				8458F3091D3E61AD001BAD1E /* SortViewController.m in Sources */,
 				84901B6B1D33E85500DA0E63 /* main.m in Sources */,
 				8473C2691D6DEF270099892F /* UIScrollView+Refresh.m in Sources */,
