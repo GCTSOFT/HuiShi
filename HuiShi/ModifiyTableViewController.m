@@ -163,12 +163,12 @@
                             NSLog(@"setting %@", dic);
                     }
                 }];
-                [task resume];
+//                [task resume];
                 
-//                //2跳转
-//                ModifiySuccessViewController *success =[[ ModifiySuccessViewController alloc] initWithNibName:@"ModifiySuccessViewController" bundle:nil];
-//                
-//                [self.navigationController pushViewController:success animated:YES];
+                //2跳转
+                ModifiySuccessViewController *success =[[ ModifiySuccessViewController alloc] initWithNibName:@"ModifiySuccessViewController" bundle:nil];
+                
+                [self.navigationController pushViewController:success animated:YES];
             }
             
             
