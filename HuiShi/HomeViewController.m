@@ -144,7 +144,7 @@
     if (selectItem.selectIndex == -1) {
         return;
     } else if (selectItem.selectIndex == 1000) {
-        NewSettingTableViewController *settingVc = [[NewSettingTableViewController alloc] initWithNibName:@"NewSettingTableViewController" bundle:nil];
+        NewSettingTableViewController *settingVc = [self.storyboard instantiateViewControllerWithIdentifier:@"NewSettingTableViewController"];
         UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:settingVc];
         navi.preferredContentSize =CGSizeMake(300, 252);
         navi.modalPresentationStyle = UIModalPresentationFormSheet;

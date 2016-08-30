@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8H5-ix-EzO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8H5-ix-EzO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1220,7 +1220,7 @@
                                                         <rect key="frame" x="16" y="8" width="194" height="79"/>
                                                     </variation>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="A47AA603-DCF6-488D-A703-9E987795DF31" translatesAutoresizingMaskIntoConstraints="NO" id="0f2-xg-ld7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3EE9EE5C-42F4-4199-8E2E-24C657F2DD86" translatesAutoresizingMaskIntoConstraints="NO" id="0f2-xg-ld7">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="23" id="8qG-rt-lCf">
@@ -1284,7 +1284,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9753FC67-AEA5-4176-A2D5-FC4292FBA822" translatesAutoresizingMaskIntoConstraints="NO" id="Rbs-uu-LU6">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3A4239B2-8DFA-44E1-880A-EB6F437C0334" translatesAutoresizingMaskIntoConstraints="NO" id="Rbs-uu-LU6">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="23" id="M3K-Ln-OkR">
@@ -1836,7 +1836,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="9753FC67-AEA5-4176-A2D5-FC4292FBA822" width="35" height="35">
+        <image name="3A4239B2-8DFA-44E1-880A-EB6F437C0334" width="35" height="35">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1987,7 +1987,7 @@ oACiAKQApgCoAK0AxADGAMgg/iEDIQ4hFyEqIS4hOSFCIUchTyFSIVchZiFqIXEheSGGIYshjSGPIZQh
 nCGfIaQhrCGvIcEhxCHJAAAAAAAAAgEAAAAAAAAAPgAAAAAAAAAAAAAAAAAAIcs
 </mutableData>
         </image>
-        <image name="A47AA603-DCF6-488D-A703-9E987795DF31" width="35" height="35">
+        <image name="3EE9EE5C-42F4-4199-8E2E-24C657F2DD86" width="35" height="35">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
