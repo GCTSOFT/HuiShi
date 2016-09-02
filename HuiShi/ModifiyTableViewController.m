@@ -100,11 +100,66 @@
                 [alert show];
             }else{//新密码和旧密码是一样的
                 
-
-                //                2跳转
-                ModifiySuccessViewController *success =[self.storyboard instantiateViewControllerWithIdentifier:@"ModifiySuccessViewController"];
+                //                NSString *searchText = @"11111112a、";
                 
-                [self.navigationController pushViewController:success animated:YES];
+                //***调用关键方法，获得bool值，yes或者no：
+                BOOL ok= [self isIncludeSpecialCharact:self.zinTextField.text];
+                if (ok==YES) {
+                    NSLog(@"包含有特殊字符");
+                    
+                    NSError *error = NULL;
+                    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,20}$" options:NSRegularExpressionDotMatchesLineSeparators error:&error];
+                    NSTextCheckingResult *result = [regex firstMatchInString:self.zinTextField.text options:0 range:NSMakeRange(0, [self.zinTextField.text length])];
+                    if (result) {
+                        NSLog(@"searchTe=%@", [self.zinTextField.text substringWithRange:result.range]);
+                        
+                        [AppUContext resetLoginWithOldpassword:self.oldTextField.text newpassword:self.zinTextField.text success:^(id data) {
+                            
+                            NSLog(@"修改密码成功");
+                            ModifiySuccessViewController *success =[self.storyboard instantiateViewControllerWithIdentifier:@"ModifiySuccessViewController"];
+                            
+                            [self.navigationController pushViewController:success animated:YES];
+                            NSLog(@"服务器返回来的数据data:%@",data);
+                            
+                        } failure:^(id data) {
+                            UIAlertView *alert = [[UIAlertView alloc]
+                                                  initWithTitle:@"提示"
+                                                  message:@"修改密码失败"
+                                                  delegate:nil
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil];
+                            [alert show];
+                            NSLog(@"修改密码失败");
+                            NSLog(@"服务器返回来的数据data:%@",data);
+                        }];
+                        
+                    }else
+                    {
+                        NSLog(@"所要条件匹配失败.失败原因是:%@",error);
+                        
+                        UIAlertView *alert = [[UIAlertView alloc]
+                                              initWithTitle:@"提示"
+                                              message:@"请输入正确密码"
+                                              delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+                        [alert show];
+                    }
+                }else{
+                    NSLog(@"不包含特殊字符");
+                    UIAlertView *alert = [[UIAlertView alloc]
+                                          initWithTitle:@"提示"
+                                          message:@"请输入正确密码"
+                                          delegate:nil
+                                          cancelButtonTitle:@"确定"
+                                          otherButtonTitles:nil];
+                    [alert show];
+                }
+                
+//                2跳转
+//                ModifiySuccessViewController *success =[self.storyboard instantiateViewControllerWithIdentifier:@"ModifiySuccessViewController"];
+//                
+//                [self.navigationController pushViewController:success animated:YES];
             
 //                [AppUContext resetLoginWithOldpassword:self.oldTextField.text newpassword:self.zinTextField.text success:^(id data) {
 //                    
