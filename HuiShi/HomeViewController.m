@@ -77,7 +77,7 @@
 
 #pragma mark - UITableViewDelegate UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{   // 0 1 2 3 4 5
     HomeMenuItem *item = [self.listArray objectAtIndex:indexPath.row];
     if (self.selectIndex == indexPath.row) {
         item.isSelected = YES;

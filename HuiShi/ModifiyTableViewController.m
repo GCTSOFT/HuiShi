@@ -98,32 +98,26 @@
                                       cancelButtonTitle:@"确定"
                                       otherButtonTitles:nil];
                 [alert show];
-            }else{//两个文本写的是一样的
+            }else{//新密码和旧密码是一样的
                 
-//                    NSError *error = NULL;
-//                    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^(?=.*[0-9]).(?=.*[a-z]).(?=.*[A-Z]).{8,10}$" options:NSRegularExpressionCaseInsensitive error:&error];
-//                
-//                    NSTextCheckingResult *result = [regex firstMatchInString:self.zinTextField.text options:0 range:NSMakeRange(0, [self.zinTextField.text length])];
-//                
-//                    if (result) {
-//                        NSLog(@"=======result%@", [self.zinTextField.text substringWithRange:result.range]);
-//                    }
-                
+
                 //                2跳转
                 ModifiySuccessViewController *success =[self.storyboard instantiateViewControllerWithIdentifier:@"ModifiySuccessViewController"];
                 
                 [self.navigationController pushViewController:success animated:YES];
             
-//                                [AppUContext resetLoginWithOldpassword:self.oldTextField.text newpassword:self.zinTextField.text success:^(id data) {
-//                                    NSLog(@"修改密码成功");
-//                                    ModifiySuccessViewController *success =[self.storyboard instantiateViewControllerWithIdentifier:@"ModifiySuccessViewController"];
+//                [AppUContext resetLoginWithOldpassword:self.oldTextField.text newpassword:self.zinTextField.text success:^(id data) {
+//                    
+//                        NSLog(@"修改密码成功");
+//                        ModifiySuccessViewController *success =[self.storyboard instantiateViewControllerWithIdentifier:@"ModifiySuccessViewController"];
 //                
-//                                   [self.navigationController pushViewController:success animated:YES];
-//                                     NSLog(@"服务器返回来的数据data:%@",data);
-//                                } failure:^(id data) {
-//                                    NSLog(@"修改密码失败");
-//                                     NSLog(@"服务器返回来的数据data:%@",data);
-//                                }];
+//                        [self.navigationController pushViewController:success animated:YES];
+//                        NSLog(@"服务器返回来的数据data:%@",data);
+//                } failure:^(id data) {
+//                    
+//                        NSLog(@"修改密码失败");
+//                        NSLog(@"服务器返回来的数据data:%@",data);
+//                }];
                 
                 
             }
@@ -134,7 +128,16 @@
     
     return footerView;
 }
-
+-(BOOL)isIncludeSpecialCharact: (NSString *)str {
+    //***需要过滤的特殊字符：~￥#&*<>《》()[]{}【】^@/￡¤￥|§¨「」『』￠￢￣~@#￥&*（）——+|《》$_€。
+    NSRange urgentRange = [str rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @"~￥#&*<>《》()[]{}【】^@/￡¤￥|§¨「」『』￠￢￣~@#￥&*（）——+|《》$_€`!$=':;',\\[\\].<>?！……（）;—|‘；：”“'。，、？"]];
+    
+    if (urgentRange.location == NSNotFound)
+    {
+        return NO;
+    }
+    return YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
